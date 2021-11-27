@@ -17,7 +17,7 @@
     "lint:fix": "eslint ./src --fix",
     "test": "cypress open-ct --browser chrome --config-file ./cypress.json",
     "test:int": "cypress open --browser chrome",
-    "cy:run": "cypress run-ct --config-file ./cypress.json"
+    "test:headless": "cypress run-ct --config-file ./cypress.json"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",

@@ -1,11 +1,16 @@
-name: Chrome headless
+name: End-to-end tests
 on: [push]
 jobs:
   cypress-run:
-    runs-on: ubuntu-16.04
+    runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: cypress-io/github-action@v2
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Run E2E tests
+        uses: cypress-io/github-action@v2
         with:
-          browser: chrome
-          headless: true
+          start: "npm run test:headless"
+          wait-on: "http://localhost:8080"
+          # let's see if the Test Runner handles url in the config
+          # https://github.com/cypress-io/cypress/issues/5466
+          config: baseUrl=http://localhost:8080
