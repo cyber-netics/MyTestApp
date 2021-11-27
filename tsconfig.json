@@ -30,7 +30,7 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": "."
   },
-  "files": ["README.md", "dist"],
-  "include": ["src/**/*", "dist"],
+  "files": ["README.md"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
