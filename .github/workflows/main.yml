@@ -12,4 +12,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run start
+          install: npm install
+          run: npm run test:headless
+
