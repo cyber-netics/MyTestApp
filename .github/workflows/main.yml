@@ -14,4 +14,4 @@ name: Cypress Tests
            with:
              working-directory: client
              build: npm run build
-             start: npm run test:headless
+             start: npm start
