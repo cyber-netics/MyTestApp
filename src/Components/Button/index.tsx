@@ -1,12 +1,11 @@
 import React from "react";
-import { Container } from "./styles";
 
 export interface ButtonProps {
   label: string;
 }
 
 const Button = (props: ButtonProps) => {
-  return <Container>{props.label}</Container>;
+  return <div>{props.label}</div>;
 };
 
 export default Button;
