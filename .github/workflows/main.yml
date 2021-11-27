@@ -13,5 +13,6 @@ name: Cypress Tests
            uses: cypress-io/github-action@v2
            with:
              working-directory: client
+             install: npm install
              build: npm run build
              start: npm start
