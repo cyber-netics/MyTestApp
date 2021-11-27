@@ -14,5 +14,5 @@ name: Cypress Tests
            with:
              working-directory: client
              install: npm install
-             build: npm run build
+             build: npm run build 
              start: npm start
