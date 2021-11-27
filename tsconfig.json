@@ -19,7 +19,12 @@
     "declaration": true,
     "declarationDir": "types",
     "rootDir": "src",
-    "jsx": "react"
+    "jsx": "react",
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
