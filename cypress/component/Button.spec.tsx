@@ -49,25 +49,25 @@ const interactiveColorTest = [
   },
 ];
 
-describe("Interactive", () => {
-  interactiveColorTest.forEach((des) => {
-    describe(des.name, { browser: des.browser }, () => {
-      colorList.forEach((colorType) => {
-        it(colorType, () => {
-          mount(<Element color={colorType}>Submit</Element>);
-          const color = secondaryColors({ colorType });
+// describe("Interactive", () => {
+//   interactiveColorTest.forEach((des) => {
+//     describe(des.name, { browser: des.browser }, () => {
+//       colorList.forEach((colorType) => {
+//         it(colorType, () => {
+//           mount(<Element color={colorType}>Submit</Element>);
+//           const color = secondaryColors({ colorType });
 
-          cy.get(".btn-element")
-            .click()
-            .onHover()
-            .pseudoCss(des.css, des.pseudo)
-            .parseColor()
-            .should("equal", color);
-        });
-      });
-    });
-  });
-});
+//           cy.get(".btn-element")
+//             .click()
+//             .onHover()
+//             .pseudoCss(des.css, des.pseudo)
+//             .parseColor()
+//             .should("equal", color);
+//         });
+//       });
+//     });
+//   });
+// });
 
 describe("Dynamic Sizes", () => {
   sizes.forEach((des) => {
