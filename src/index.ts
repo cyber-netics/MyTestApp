@@ -1,11 +1,8 @@
 export { default as Button } from "./Components/Button";
 
-// import React from "react";
-// import ReactDOM from "react-dom";
-
 // ReactDOM.render(
 //   <React.StrictMode>
-//     <h1>Hello !</h1>
+//     <Button size="small" />
 //   </React.StrictMode>,
 //   document.getElementById("root")
 // );

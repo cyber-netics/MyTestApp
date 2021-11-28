@@ -63,6 +63,7 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
+    "@types/node": "^16.11.10",
     "styled-components": "^5.3.3"
   },
   "repository": {
