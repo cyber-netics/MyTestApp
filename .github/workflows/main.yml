@@ -10,7 +10,7 @@ jobs:
         with:
           browser: chrome
           start: npm run test:headless chrome
-          config: videoRecording=false,screenshotOnRunFailure=false
+          config: record=false
 
   firefox:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
         with:
           browser: firefox
           start: npm run test:headless firefox
-          config: videoRecording=false,screenshotOnRunFailure=false
+          config: record=false
 
   edge:
     runs-on: windows-latest
@@ -33,4 +33,4 @@ jobs:
         with:
           browser: edge
           start: npm run test:headless edge
-          config: videoRecording=false,screenshotOnRunFailure=false
+          config: record=false
