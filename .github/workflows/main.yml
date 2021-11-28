@@ -30,5 +30,8 @@ jobs:
       - name: Firefox
         run: npm run test:headless firefox
 
+      - name: Edge
+        run: npm run test:headless edge
+
       - name: Electron
         run: npm run test:headless electron
