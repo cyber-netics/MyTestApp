@@ -6,7 +6,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node12.19.0-chrome86-ff82
+      image: cypress/browsers:node13.3.0-chrome79-ff70
 
     steps:
       - name: Checkout
