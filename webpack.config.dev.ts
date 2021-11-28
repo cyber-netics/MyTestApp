@@ -1,6 +1,5 @@
 import * as path from "path";
 import * as webpack from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import alias from "./config/paths.webpack";
 
@@ -43,9 +42,6 @@ const config: webpack.Configuration = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: Settings.html_template,
-    }),
     new webpack.ProvidePlugin({
       React: "react",
     }),

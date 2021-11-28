@@ -30,6 +30,9 @@ jobs:
       - name: Firefox
         run: npm run test:headless firefox
 
+      - uses: browser-actions/setup-edge@latest
+        width: 
+          edge-version: beta
       - name: Edge
         run: npm run test:headless edge
 
