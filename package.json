@@ -13,10 +13,9 @@
     "dev": "cross-env TS_NODE_PROJECT=\"./config/webpack.tsconfig.json\" webpack s --config ./webpack.config.dev.ts",
     "rollup": "rollup -c",
     "build": "npm run rollup",
-    "prepare": "npm run build",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "test": "cypress open --browser edge",
+    "test": "cypress open --browser chrome",
     "test:headless": "cypress run-ct --config-file ./cypress.json --browser $browser"
   },
   "devDependencies": {
