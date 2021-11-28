@@ -5,6 +5,8 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node12.16.1-chrome80-ff73
 
     steps:
       - name: Checkout
@@ -26,3 +28,6 @@ jobs:
 
       - name: Edge
         run: npm run test:headless edge
+
+      - name: Electron
+        run: npm run test:headless electron
