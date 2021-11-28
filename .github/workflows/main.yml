@@ -21,9 +21,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup and run Cypress
-        uses: cypress-io/github-action@v2
-        with:
-          browser: chrome
-          headless: true
-          start: npm start
+      - name: Test
+        run: npm run test:headless
