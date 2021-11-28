@@ -16,9 +16,10 @@
     "prepare": "npm run build",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "test": "cypress open-ct --browser chrome --config-file ./cypress.json",
-    "test:int": "cypress open --browser chrome",
-    "test:headless": "cypress run-ct --config-file ./cypress.json"
+    "test": "cypress open-ct --config-file ./cypress.json --browser $browser",
+    "test:chrome": "npm run test --browser chrome",
+    "test:firefox": "npm run test --browser firefox",
+    "test:headless": "cypress run-ct --config-file ./cypress.json --browser $browser"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.16.4",

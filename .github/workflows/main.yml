@@ -18,5 +18,8 @@ jobs:
       - name: Install
         run: npm install
 
-      - name: Run Component tests
-        run: npm run test:headless
+      - name: Chrome Tests
+        run: npm run test:headless chrome
+
+      - name: Firefox Tests
+        run: npm run test:headless firefox
