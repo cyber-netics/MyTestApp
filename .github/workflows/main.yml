@@ -1,23 +1,28 @@
-name: Cypress Tests
-
-on: [push]
+on:
+  push:
+    branches: ["*"]
 
 jobs:
-  cypress-run:
+  tests:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
       - name: Install
         run: npm install
 
-      - name: Run Server
-        run: npm run dev
+      - name: Chrome
+        run: npm run test:headless chrome
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build
-          start: npm start
+      - name: Firefox
+        run: npm run test:headless firefox
+
+      - name: Edge
+        run: npm run test:headless edge
