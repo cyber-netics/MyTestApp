@@ -3,7 +3,7 @@ declare global {
   type ButtonEvent = React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>;
 
   // Dynamic
-  type IColorTypes = "primary" | "dark" | "light";
+  type IColorTypes = "primary" | "dark";
   type ISizeTypes = "small" | "medium" | "large";
   type IStatusColorTypes = "success" | "error" | "neutral";
 

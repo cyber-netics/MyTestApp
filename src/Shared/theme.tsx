@@ -23,25 +23,21 @@ export const colors = {
 export const theme = {
   colors: {
     primary: {
-      light: colors.light,
       dark: colors.dark,
       primary: colors.primary,
     },
 
     secondary: {
-      light: colors.light,
       dark: colors.dark1,
       primary: colors.primary1,
     },
 
     font: {
       primary: {
-        light: colors.light,
         dark: colors.light,
         primary: colors.light,
       },
       secondary: {
-        light: colors.light,
         dark: colors.dark,
         primary: colors.highlight1,
       },
@@ -49,12 +45,10 @@ export const theme = {
 
     shadow: {
       primary: {
-        light: colors.light,
         dark: colors.dark2,
         primary: colors.primary2,
       },
       secondary: {
-        light: colors.light,
         dark: colors.dark3,
         primary: colors.primary3,
       },

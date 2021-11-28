@@ -10,7 +10,7 @@ export interface ButtonProps extends ElemSizeTypes, ElemColorTypes {
   onClick?: (e: ButtonEvent) => void;
 }
 
-const Button = (props: ButtonProps) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const [focus, setFocus] = useState(false);
   const mountedRef = useRef(true);
 
