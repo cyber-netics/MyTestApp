@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import { ButtonElem } from "./styles";
 import { Row } from "Components/Grid";
+import { ButtonElem, LoadingAnim } from "./styles";
 
 export interface ButtonProps extends ElemSizeTypes, ElemColorTypes {
   loading?: boolean;
@@ -46,7 +46,12 @@ const Button = (props: ButtonProps) => {
       className={props.className}
     >
       <Row>
-        <span>Runing</span>
+        <>{props.children && props.children}</>
+        <>
+          {props.loading && (
+            <LoadingAnim className="button-loading" sizeType={props.size} />
+          )}
+        </>
       </Row>
     </ButtonElem>
   );
