@@ -15,5 +15,8 @@ jobs:
         with:
           node-version: "16"
 
+      - name: Install
+        run: npm install
+
       - name: Run Component tests
         run: npm run test:headless
