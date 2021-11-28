@@ -12,6 +12,7 @@ const Button: React.FC = () => {
 describe("Avatar Sizing", () => {
   it("tesing", () => {
     mount(<Button />);
+    cy.get(".button-elem").should("exist");
     cy.get(".button-elem").should("have.text", "Hello");
   });
 });
