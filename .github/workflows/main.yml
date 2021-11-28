@@ -6,9 +6,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     services:
-      chrome:
-        image: cypress/browsers:node14.16.0-chrome89-ff86
-      edge:
+      container:
         image: cypress/browsers:node14.10.1-edge88
 
     steps:
@@ -24,15 +22,12 @@ jobs:
         run: |
           npm install
 
-      - name: Chrome
-        run: npm run test:headless chrome
+      # - name: Chrome
+      #   run: npm run test:headless chrome
 
-      - name: Firefox
-        run: npm run test:headless firefox
+      # - name: Firefox
+      #   run: npm run test:headless firefox
 
-      - uses: browser-actions/setup-edge@latest
-        with: 
-          edge-version: beta
       - name: Edge
         run: npm run test:headless edge
 
