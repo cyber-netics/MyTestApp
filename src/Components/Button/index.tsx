@@ -1,12 +1,23 @@
 import React from "react";
-import { Container } from "./styles";
+import { ButtonElem } from "./styles";
+import { Row } from "Components/Grid";
 
 export interface ButtonProps {
-  label: string;
+  loading?: boolean;
+  disabled?: boolean;
+  className?: string;
+  children?: JSX.Element | string;
+  onClick?: (e: ButtonEvent) => void;
 }
 
 const Button = (props: ButtonProps) => {
-  return <Container>{props.label}</Container>;
+  return (
+    <ButtonElem>
+      <Row>
+        <span>Runing</span>
+      </Row>
+    </ButtonElem>
+  );
 };
 
 export default Button;

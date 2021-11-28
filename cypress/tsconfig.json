@@ -1,12 +1,13 @@
 {
   "extends": "../tsconfig.json",
   "include": ["./**/*.tsx", "./**/*.ts"],
-  "exclude": [],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "types": ["node", "cypress"],
     "lib": ["es2016", "dom"],
     "isolatedModules": false,
     "allowJs": true,
-    "noEmit": true
+    "noEmit": true,
+    "rootDir": "."
   }
 }
