@@ -21,10 +21,5 @@ jobs:
       - name: Install
         run: npm install
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          browser: chrome
-
       - name: Run Test
         run: npm run test:headless
