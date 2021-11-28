@@ -2,8 +2,20 @@ declare global {
   // onClick event
   type ButtonEvent = React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>;
 
-  interface IColorTypes {
-    test: string;
+  interface ElemSizeTypes {
+    size?: ISizeTypes;
+  }
+
+  interface ElemColorTypes {
+    color?: IColorTypes;
+  }
+
+  interface InnerSizeTypes {
+    sizeType?: ISizeTypes;
+  }
+
+  interface InnerColorTypes {
+    colorType?: IColorTypes;
   }
 }
 
