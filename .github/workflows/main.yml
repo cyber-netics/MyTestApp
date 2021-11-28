@@ -20,6 +20,5 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Test
         run: npm run test:headless
+        
