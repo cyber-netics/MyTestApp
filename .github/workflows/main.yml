@@ -24,11 +24,11 @@ jobs:
           key: node-modules-${{ hashFiles('package-lock.json') }}
 
       - name: Cache Cypress Binary
-        id: cache-cypress-binary
+        id: cache-cypress-binary-firefox
         uses: actions/cache@v2
         with:
           path: /github/home/.cache/Cypress
-          key: cypress-binary-${{ hashFiles('/github/home/.cache/Cypress') }}
+          key: cypress-binary-firefox-${{ hashFiles('/github/home/.cache/Cypress') }}
 
       - name: Install
         run: |
