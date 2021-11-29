@@ -1,6 +1,5 @@
 import path from "path";
 import alias from "./config/paths.webpack";
-import HtmlWebPackPlugin from "html-webpack-plugin";
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.jsx"),
@@ -10,6 +9,7 @@ module.exports = {
   },
   mode: "development",
   devtool: false,
+
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
@@ -17,6 +17,9 @@ module.exports = {
     chunkFilename: "[name].bundle.js",
   },
 
+  devServer: {
+    port: 3000 | 3001,
+  },
   module: {
     rules: [
       {
@@ -75,10 +78,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: path.resolve(__dirname, "public/index.html"),
-      filename: "index.html",
-    }),
-  ],
 };
