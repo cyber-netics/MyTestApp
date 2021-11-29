@@ -26,7 +26,7 @@ jobs:
         id: cache-cypress-binary
         uses: actions/cache@v2
         with:
-          path: cypress/cache
+          path: C:\Users\runneradmin\AppData\Local\Cypress\Cache
           key: cypress-binary-${{ hashFiles('package-lock.json') }}
 
       - name: Install
@@ -65,7 +65,7 @@ jobs:
         id: cache-cypress-binary
         uses: actions/cache@v2
         with:
-          path: cypress/cache
+          path: C:\Users\runneradmin\AppData\Local\Cypress\Cache
           key: cypress-binary-${{ hashFiles('package-lock.json') }}
 
       - name: Install
