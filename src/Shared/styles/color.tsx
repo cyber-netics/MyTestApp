@@ -6,6 +6,7 @@ import {
   secondaryColors,
   primaryFontColors,
   secondaryFontColors,
+  primaryStatusColors,
 } from "../dynamic";
 
 export const fontColorPrimary = css`
@@ -22,4 +23,8 @@ export const backgroundSecondary = css`
 
 export const fontColorSecondary = css`
   color: ${secondaryFontColors};
+`;
+
+export const statusPrimary = css`
+  background-color: ${primaryStatusColors};
 `;
