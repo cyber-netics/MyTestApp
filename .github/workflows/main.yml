@@ -17,7 +17,7 @@ jobs:
       - name: Install
         run: |
           npm install
-          sudo apt-get install -y microsoft-edge-dev
+          apt-get install -y microsoft-edge-dev
 
       - name: Edge
         run: npm run test:headless edge:dev
