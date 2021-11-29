@@ -4,7 +4,7 @@ on:
 
 jobs:
   tests:
-    runs-on: wndows-2019
+    runs-on: ubuntu-latest
     services:
       container:
         image: cypress/browsers:node14.10.1-edge88
