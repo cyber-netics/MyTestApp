@@ -1,4 +1,4 @@
-// import Color from "color";
+import Color from "color";
 
 export const extractRgb = (str: string) => {
   var match = str.match(
@@ -13,10 +13,8 @@ export const extractRgb = (str: string) => {
 };
 
 export const convertRgb = (rgba: string) => {
-  // const color = Color(rgba);
-  // const arr = color.rgb().array();
-
-  // if (arr.length > 3) arr.pop();
-  // return Color(arr).rgb().toString();
-  return ''
+  const color = Color(rgba);
+  const arr = color.rgb().array();
+  if (arr.length > 3) arr.pop();
+  return Color(arr).rgb().toString();
 };

@@ -7,7 +7,7 @@ declare global {
       timesToClick([...args]: "Once" | "Twice"): Cypress.Chainable<Element>;
       onHover(): Cypress.Chainable<Element>;
       pseudoCss(css: string, pseudo?: string): Cypress.Chainable<Element>;
-      parseColor(): Cypress.Chainable<Element>;
+      parseColor(): Cypress.Chainable<string>;
     }
   }
 }

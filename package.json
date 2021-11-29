@@ -60,16 +60,17 @@
     "typescript-styled-plugin": "^0.18.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^4.6.0",
     "@babel/core": "^7.16.0",
     "@cypress/webpack-preprocessor": "^5.10.0",
     "@types/color": "^3.0.2",
     "@types/node": "^16.11.10",
     "color": "^4.0.2",
     "cross-env": "^7.0.3",
-    "html-webpack-plugin": "^5.5.0",
+    "execa": "^6.0.0",
+    "html-webpack-plugin": "^5.5.0"
+  },
+  "dependencies": {
     "styled-components": "^5.3.3"
   },
   "repository": {

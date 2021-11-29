@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "@cypress/react";
 
-import { sizeList, colorList } from "../helpers";
+import { sizeList, colorList, clicks } from "../helpers";
 import Button, { ButtonProps } from "Components/Button";
 
 import {
@@ -18,9 +18,6 @@ const Element: React.FC<ButtonProps> = (props) => (
     {props.children}
   </Button>
 );
-
-type clickTypes = "Once" | "Twice";
-const clicks: clickTypes[] = ["Once", "Twice"];
 
 const sizes = [
   { name: "Height", css: "min-height", mock: primaryHeight },
@@ -111,9 +108,17 @@ describe("Element", () => {
         cy.get(`@clicked-${clicked}`).should(`have.been.called${clicked}`);
       });
     });
+
+    it("disabled", () => {
+      const onClick = cy.stub().as("click-disabled");
+      mount(<Element onClick={onClick} disabled={true} />);
+      cy.get(".btn-element").should("be.disabled");
+      cy.get(".btn-element").click({ force: true });
+      cy.get("@click-disabled").should("not.have.been.called");
+    });
   });
 
-  describe("Child", () => {
+  describe("Inner Text", () => {
     ["Submit", "Element"].forEach((name) => {
       it(`Text "${name}"`, () => {
         mount(<Element>{name}</Element>);
