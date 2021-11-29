@@ -15,6 +15,13 @@ jobs:
         with:
           node-version: "14"
 
+      - name: Restore node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
       - name: Install
         run: |
           npm install
@@ -24,6 +31,9 @@ jobs:
 
       - name: Edge
         run: npm run test:headless edge
+
+      - name: Chrome
+        run: npm run test:headless chrome
 
       # - name: Electron
       #   run: npm run test:headless electron

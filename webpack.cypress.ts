@@ -1,5 +1,6 @@
 import path from "path";
 import alias from "./config/paths.webpack";
+import HtmlWebPackPlugin from "html-webpack-plugin";
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.jsx"),
@@ -73,4 +74,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: path.resolve(__dirname, "public/index.html"),
+      filename: "index.html",
+    }),
+  ],
 };

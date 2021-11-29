@@ -67,6 +67,7 @@
     "@types/node": "^16.11.10",
     "color": "^4.0.2",
     "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
     "styled-components": "^5.3.3"
   },
   "repository": {
