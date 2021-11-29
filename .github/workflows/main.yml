@@ -23,7 +23,7 @@ jobs:
           npm install
 
       - name: Edge
-        run: npm run test:headless edge
+        run: npm run test:headless edge:dev
 
       - name: Electron
         run: npm run test:headless electron
