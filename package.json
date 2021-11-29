@@ -15,8 +15,8 @@
     "build": "npm run rollup",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "test": "cypress open-ct --browser edge",
-    "test:headless": "cypress run-ct --config-file ./cypress.json --config video=false --browser $browser"
+    "test": "cypress open-ct --browser $browser",
+    "test:headless": "cypress run-ct --config-file ./cypress.json --config video=false --browser edge"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.16.4",

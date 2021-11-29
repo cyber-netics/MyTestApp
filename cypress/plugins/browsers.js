@@ -2,8 +2,7 @@ const execa = require("execa");
 
 export const findBrowser = () => {
   // the path is hard-coded for simplicity
-  const browserPath =
-    "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser";
+  const browserPath = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser";
 
   return execa(browserPath, ["--version"]).then((result) => {
     // STDOUT will be like "Brave Browser 77.0.69.135"

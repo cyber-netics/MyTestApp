@@ -9,9 +9,10 @@ module.exports = (on, config) => {
     startDevServer({ options, webpackConfig })
   );
 
-  return findBrowser().then((browser) => {
-    return {
-      browsers: config.browsers.concat(browser),
-    };
-  });
+  return config;
+  // return findBrowser().then((browser) => {
+  //   return {
+  //     browsers: config.browsers.concat(browser),
+  //   };
+  // });
 };
