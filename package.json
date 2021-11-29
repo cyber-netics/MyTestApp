@@ -16,7 +16,9 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "cypress open-ct --browser $browser",
-    "test:headless": "cypress run-ct --config-file ./cypress.json --config video=false --browser $browser"
+    "test:headless": "cypress run-ct --config-file ./cypress.json --config video=false --browser $browser",
+    "test:chrome": "npm run test:headless chrome",
+    "test:edge": "npm run test:headless edge"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.16.4",
