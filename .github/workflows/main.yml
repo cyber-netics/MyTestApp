@@ -1,39 +1,25 @@
 on:
   push:
     branches: ["*"]
-
 jobs:
-  tests:
-    runs-on: windows-latest
-
+  setup-node_modules:
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Set up node
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-
+      ...
       - name: Cache node modules
         uses: actions/cache@v1
         with:
           path: node_modules
           key: node_modules-${{ hashFiles('package-lock.json') }}
+          # loading an older version is fine here, since it will get an npm install
           restore-keys: |
             node_modules-
 
-      - name: Install
+      - name: npm install
         run: npm install
 
-      - name: Edage
-        run: npm run test:headless edge
 
-  firefox:
-    run-on: ubuntu-latest
-    services:
-      chrome:
-        image: cypress/browsers:node14.16.0-chrome89-ff86
+  parallel-build1:
+    run-on: windows-latest
     needs: setup-node_modules
     steps:
       - name: Load node_modules
@@ -41,12 +27,20 @@ jobs:
         with:
           path: node_modules
           key: node_modules-${{ hashFiles('package-lock.json') }}
-
-      - name: Install
-        run: npm install
-
+          # no restore-keys here, so we only accept this exact version
       - name: Chrome
-        run: npm run test:headless chrome
+        run: npm run headless:chrome
 
-      # - name: Electron
-      #   run: npm run test:headless electron
+
+  parallel-build2:
+    run-on: windows-latest
+    needs: setup-node_modules
+    steps:
+      - name: Load node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package-lock.json') }}
+          # no restore-keys here, so we only accept this exact version
+      - name: Chrome
+        run: npm run headless:firefox
