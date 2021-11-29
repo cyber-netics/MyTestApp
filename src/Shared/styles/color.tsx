@@ -1,8 +1,12 @@
 import { css } from "styled-components";
 import { colors } from "../theme";
 
-import { primaryFontColors, primaryColors } from "../dynamic";
-import { secondaryColors } from "../dynamic";
+import {
+  primaryColors,
+  secondaryColors,
+  primaryFontColors,
+  secondaryFontColors,
+} from "../dynamic";
 
 export const fontColorPrimary = css`
   color: ${primaryFontColors};
@@ -14,4 +18,8 @@ export const backgroundPrimary = css`
 
 export const backgroundSecondary = css`
   background-color: ${secondaryColors};
+`;
+
+export const fontColorSecondary = css`
+  color: ${secondaryFontColors};
 `;

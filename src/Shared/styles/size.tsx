@@ -1,5 +1,10 @@
 import { css } from "styled-components";
-import { primaryHeight, primaryFontSize, tertiaryHeight } from "../dynamic";
+import {
+  primaryHeight,
+  primaryFontSize,
+  tertiaryHeight,
+  secondaryFontSize,
+} from "../dynamic";
 
 // Height
 export const hightPrimary = css`
@@ -20,4 +25,8 @@ export const sizePrimary = css`
 export const sizeTertiary = css`
   width: ${tertiaryHeight};
   height: ${tertiaryHeight};
+`;
+
+export const fontSizeSecondary = css`
+  font-size: ${secondaryFontSize};
 `;
