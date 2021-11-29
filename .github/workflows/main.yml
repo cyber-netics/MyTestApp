@@ -38,34 +38,34 @@ jobs:
       # - name: Electron
       #   run: npm run test:headless electron
 
-tests:
-  runs-on: windows-latest
+  tests2:
+    runs-on: windows-latest
 
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Set up node
-      uses: actions/setup-node@v2
-      with:
-        node-version: "16"
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
 
-    - name: Restore node_modules
-      id: cache-node-modules
-      uses: actions/cache@v2
-      with:
-        path: node_modules
-        key: node-modules-${{ hashFiles('package-lock.json') }}
+      - name: Restore node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
 
-    - name: Install
-      run: |
-        npm install
+      - name: Install
+        run: |
+          npm install
 
-    - name: Browsers
-      run: npx cypress info
+      - name: Browsers
+        run: npx cypress info
 
-    # - name: Chrome
-    #   run: npm run test:headless chrome
+      # - name: Chrome
+      #   run: npm run test:headless chrome
 
-    # - name: Electron
-    #   run: npm run test:headless electron
+      # - name: Electron
+      #   run: npm run test:headless electron
