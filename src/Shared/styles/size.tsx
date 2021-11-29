@@ -12,6 +12,11 @@ export const fontSizePrimary = css`
 `;
 
 // Size
+export const sizePrimary = css`
+  width: ${primaryHeight};
+  height: ${primaryHeight};
+`;
+
 export const sizeTertiary = css`
   width: ${tertiaryHeight};
   height: ${tertiaryHeight};
