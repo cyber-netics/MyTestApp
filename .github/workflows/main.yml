@@ -25,6 +25,11 @@ jobs:
       - name: Browsers
         run: cypress info
 
+      - uses: cypress-io/github-action@v2
+        with:
+          browser: edge
+        run: npm run test:headless edge
+        
       # - name: Edge
       #   run: npm run test:headless edge
 
