@@ -38,72 +38,72 @@ jobs:
       - name: firefox
         run: npm run test:firefox
 
-  edge:
-    needs: firefox
-    runs-on: windows-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # edge:
+  #   needs: firefox
+  #   runs-on: windows-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Set up node
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
+  #     - name: Set up node
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: "16"
 
-      - name: Restore node_modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+  #     - name: Restore node_modules
+  #       id: cache-node-modules
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: node_modules
+  #         key: node-modules-${{ hashFiles('package-lock.json') }}
 
-      - name: Cache Cypress Binary
-        id: cache-cypress-binary
-        uses: actions/cache@v2
-        with:
-          path: C:\Users\runneradmin\AppData\Local\Cypress\Cache
-          key: cypress-binary-${{ hashFiles('C:\Users\runneradmin\AppData\Local\Cypress\Cache') }}
+  #     - name: Cache Cypress Binary
+  #       id: cache-cypress-binary
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: C:\Users\runneradmin\AppData\Local\Cypress\Cache
+  #         key: cypress-binary-${{ hashFiles('C:\Users\runneradmin\AppData\Local\Cypress\Cache') }}
 
-      - name: Install
-        run: |
-          npm install
-          npx cypress install
+  #     - name: Install
+  #       run: |
+  #         npm install
+  #         npx cypress install
 
-      - name: Edge
-        run: npm run test:edge
+  #     - name: Edge
+  #       run: npm run test:edge
 
-  chrome:
-    needs: edge
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+  # chrome:
+  #   needs: edge
+  #   runs-on: ubuntu-latest
+  #   container: cypress/browsers:node12.18.3-chrome87-ff82
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Set up node
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
+  #     - name: Set up node
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: "16"
 
-      - name: Restore node_modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+  #     - name: Restore node_modules
+  #       id: cache-node-modules
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: node_modules
+  #         key: node-modules-${{ hashFiles('package-lock.json') }}
 
-      - name: Cache Cypress Binary
-        id: cache-cypress-binary
-        uses: actions/cache@v2
-        with:
-          path: /github/home/.cache/Cypress
-          key: cypress-binary-${{ hashFiles('/github/home/.cache/Cypress') }}
+  #     - name: Cache Cypress Binary
+  #       id: cache-cypress-binary
+  #       uses: actions/cache@v2
+  #       with:
+  #         path: /github/home/.cache/Cypress
+  #         key: cypress-binary-${{ hashFiles('/github/home/.cache/Cypress') }}
 
-      - name: Install
-        run: |
-          npm install
-          npx cypress install
+  #     - name: Install
+  #       run: |
+  #         npm install
+  #         npx cypress install
 
-      - name: Chrome
-        run: npm run test:chrome
+  #     - name: Chrome
+  #       run: npm run test:chrome
