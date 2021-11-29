@@ -15,25 +15,38 @@ jobs:
         with:
           node-version: "16"
 
-      - name: Restore node_modules
-        id: cache-node-modules
-        uses: actions/cache@v2
+      - name: Cache node modules
+        uses: actions/cache@v1
         with:
           path: node_modules
-          key: node-modules-${{ hashFiles('package.json') }}
+          key: node_modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            node_modules-
 
       - name: Install
-        run: |
-          npm install
+        run: npm install
 
-      - name: Browsers
-        run: npx cypress info
-
-      - name: Edge
+      - name: Edage
         run: npm run test:headless edge
 
-      # - name: Chrome
-      #   run: npm run test:headless chrome
+  firefox:
+    run-on: ubuntu-latest
+    services:
+      chrome:
+        image: cypress/browsers:node14.16.0-chrome89-ff86
+    needs: setup-node_modules
+    steps:
+      - name: Load node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package-lock.json') }}
+
+      - name: Install
+        run: npm install
+
+      - name: Chrome
+        run: npm run test:headless chrome
 
       # - name: Electron
       #   run: npm run test:headless electron
