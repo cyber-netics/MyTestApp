@@ -16,8 +16,8 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "cypress open-ct --browser $browser",
-    "test:chrome": "cypress run-ct --config-file ./cypress.json --config video=false --browser chrome",
-    "test:firefox": "cypress run-ct --config-file ./cypress.json --config video=false --browser firefox",
+    "test:chrome": "cypress run-ct --remote-debugging-port=8085 --browser chrome",
+    "test:firefox": "cypress run-ct --config video=false --browser firefox",
     "test:edge": "cypress run-ct --config-file ./cypress.json --config video=false --browser edge"
   },
   "devDependencies": {
