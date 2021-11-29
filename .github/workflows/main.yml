@@ -4,7 +4,7 @@ on:
 
 jobs:
   tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     services:
       container:
         image: cypress/browsers:node14.10.1-edge88
@@ -21,6 +21,7 @@ jobs:
       - name: Install
         run: |
           npm install
+          apt-get install -y microsoft-edge-dev
 
       - name: Edge
         run: npm run test:headless edge:dev
