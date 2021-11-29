@@ -32,6 +32,7 @@ jobs:
       - name: Install
         run: |
           npm install
+          npx cypress install
 
       - name: Edge
         run: npm run test:edge
@@ -71,6 +72,7 @@ jobs:
       - name: Install
         run: |
           npm install
+          npx cypress install
 
       - name: Chrome
         run: npm run test:chrome
