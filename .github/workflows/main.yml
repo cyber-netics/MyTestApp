@@ -1,43 +1,71 @@
 on:
   push:
     branches: ["*"]
+
 jobs:
-  setup-node_modules:
+  tests:
+    runs-on: windows-latest
+
     steps:
-      - name: Cache node modules
-        uses: actions/cache@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Restore node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
         with:
           path: node_modules
-          key: node_modules-${{ hashFiles('package-lock.json') }}
-          # loading an older version is fine here, since it will get an npm install
-          restore-keys: |
-            node_modules-
+          key: node-modules-${{ hashFiles('package-lock.json') }}
 
-      - name: npm install
-        run: npm install
+      - name: Install
+        run: |
+          npm install
 
-  parallel-build1:
-    run-on: windows-latest
-    needs: setup-node_modules
-    steps:
-      - name: Load node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: node_modules-${{ hashFiles('package-lock.json') }}
-          # no restore-keys here, so we only accept this exact version
-      - name: Chrome
-        run: npm run headless:chrome
+      - name: Browsers
+        run: npx cypress info
 
-  parallel-build2:
-    run-on: windows-latest
-    needs: setup-node_modules
-    steps:
-      - name: Load node_modules
-        uses: actions/cache@v1
-        with:
-          path: node_modules
-          key: node_modules-${{ hashFiles('package-lock.json') }}
-          # no restore-keys here, so we only accept this exact version
-      - name: Chrome
-        run: npm run headless:firefox
+      - name: Edge
+        run: npm run test:headless edge
+
+      # - name: Chrome
+      #   run: npm run test:headless chrome
+
+      # - name: Electron
+      #   run: npm run test:headless electron
+
+tests:
+  runs-on: windows-latest
+
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up node
+      uses: actions/setup-node@v2
+      with:
+        node-version: "16"
+
+    - name: Restore node_modules
+      id: cache-node-modules
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: node-modules-${{ hashFiles('package-lock.json') }}
+
+    - name: Install
+      run: |
+        npm install
+
+    - name: Browsers
+      run: npx cypress info
+
+    # - name: Chrome
+    #   run: npm run test:headless chrome
+
+    # - name: Electron
+    #   run: npm run test:headless electron
