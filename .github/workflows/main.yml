@@ -30,7 +30,7 @@ jobs:
         run: npx cypress info
 
       - name: Edge
-        run: npm run test:headless edge
+        run: npm run test:edge
 
       # - name: Chrome
       #   run: npm run test:headless chrome
@@ -64,8 +64,8 @@ jobs:
       - name: Browsers
         run: npx cypress info
 
-      # - name: Chrome
-      #   run: npm run test:headless chrome
+      - name: Chrome
+        run: npm run test:chrome
 
       # - name: Electron
       #   run: npm run test:headless electron
