@@ -22,7 +22,12 @@ const Element: React.FC<ButtonProps> = (props) => (
 const sizes = [
   { name: "Height", css: "min-height", mock: primaryHeight },
   { name: "Font", css: "font-size", mock: primaryFontSize },
-  { name: "Spacing", css: "padding", mock: primarySpace },
+  {
+    name: "Spacing",
+    css: "padding",
+    mock: primarySpace,
+    browser: "chrome" || "edge",
+  },
 ];
 
 const colors = [
@@ -31,38 +36,44 @@ const colors = [
 ];
 
 const interactiveColorTest = [
-  { name: "Hover", css: "backgroundColor", mock: secondaryColors },
+  {
+    name: "Hover",
+    css: "backgroundColor",
+    mock: secondaryColors,
+    browser: "chrome" || "edge",
+  },
   {
     name: "Wave Animation",
     pseudo: "after",
     css: "boxShadow",
     mock: secondaryColors,
+    browser: "chrome" || "edge",
   },
 ];
 
-// describe("Interactive", () => {
-//   interactiveColorTest.forEach((des) => {
-//     describe(des.name, { browser: des.browser }, () => {
-//       colorList.forEach((colorType) => {
-//         it(colorType, () => {
-//           mount(<Element color={colorType}>Submit</Element>);
-//           const color = secondaryColors({ colorType });
+describe("Interactive", () => {
+  interactiveColorTest.forEach((des) => {
+    describe(des.name, { browser: des.browser }, () => {
+      colorList.forEach((colorType) => {
+        it(colorType, () => {
+          mount(<Element color={colorType}>Submit</Element>);
+          const color = secondaryColors({ colorType });
 
-//           cy.get(".btn-element")
-//             .click()
-//             .onHover()
-//             .pseudoCss(des.css, des.pseudo)
-//             .parseColor()
-//             .should("equal", color);
-//         });
-//       });
-//     });
-//   });
-// });
+          cy.get(".btn-element")
+            .click()
+            .onHover()
+            .pseudoCss(des.css, des.pseudo)
+            .parseColor()
+            .should("equal", color);
+        });
+      });
+    });
+  });
+});
 
 describe("Dynamic Sizes", () => {
   sizes.forEach((des) => {
-    describe(des.name, { browser: "chrome" || "edge" }, () => {
+    describe(des.name, { browser: des.browser }, () => {
       sizeList.forEach((sizeType) => {
         it(sizeType, () => {
           mount(<Element size={sizeType}>Submit</Element>);
