@@ -16,9 +16,9 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "cypress open-ct --browser $browser",
-    "test:chrome": "cypress run-ct --config-file ./cypress.json --config video=false --browser chrome --port 8080",
+    "test:chrome": "cypress run-ct --config-file ./cypress.json --config video=false baseUrl=http://localhost:8085/ --port=8085 --browser chrome",
     "test:firefox": "cypress run-ct --config-file ./cypress.json --config video=false --browser firefox --port 8081",
-    "test:edge": "cypress run-ct --config-file ./cypress.json --config video=false --browser edge --port 8082"
+    "test:edge": "cypress run-ct --config-file ./cypress.json --config video=false --port 8082 --browser edge"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.16.4",
