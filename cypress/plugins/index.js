@@ -5,7 +5,6 @@ import { startDevServer } from "@cypress/webpack-dev-server";
 
 module.exports = (on, config) => {
   on("dev-server:start", (options) => {
-    config.port = 5000;
     return startDevServer({ options, webpackConfig });
   });
 
