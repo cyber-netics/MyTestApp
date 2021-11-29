@@ -33,7 +33,7 @@ jobs:
       - name: Install
         run: |
           npm install
-          npx cypress install
+          # npx cypress install
 
       - name: firefox
         run: npm run test:firefox

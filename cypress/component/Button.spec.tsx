@@ -22,7 +22,7 @@ const Element: React.FC<ButtonProps> = (props) => (
 const sizes = [
   { name: "Height", css: "min-height", mock: primaryHeight },
   { name: "Font", css: "font-size", mock: primaryFontSize },
-  { name: "Spacing", css: "padding", mock: primarySpace, browser: "chrome" },
+  { name: "Spacing", css: "padding", mock: primarySpace },
 ];
 
 const colors = [
@@ -31,18 +31,12 @@ const colors = [
 ];
 
 const interactiveColorTest = [
-  {
-    name: "Hover",
-    css: "backgroundColor",
-    mock: secondaryColors,
-    browser: "chrome",
-  },
+  { name: "Hover", css: "backgroundColor", mock: secondaryColors },
   {
     name: "Wave Animation",
     pseudo: "after",
     css: "boxShadow",
     mock: secondaryColors,
-    browser: "chrome",
   },
 ];
 
@@ -68,7 +62,7 @@ const interactiveColorTest = [
 
 describe("Dynamic Sizes", () => {
   sizes.forEach((des) => {
-    describe(des.name, { browser: des.browser }, () => {
+    describe(des.name, { browser: "chrome" || "edge" }, () => {
       sizeList.forEach((sizeType) => {
         it(sizeType, () => {
           mount(<Element size={sizeType}>Submit</Element>);
