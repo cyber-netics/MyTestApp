@@ -4,7 +4,7 @@ on:
 
 jobs:
   tests:
-    runs-on: Windows-latest
+    runs-on: wndows-latest
     services:
       container:
         image: cypress/browsers:node14.10.1-edge88
