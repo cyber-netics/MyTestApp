@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-modules-1${{ hashFiles('package-lock.json') }}
+          key: node-modules-2${{ hashFiles('package-lock.json') }}
 
       - name: Install
         run: |
