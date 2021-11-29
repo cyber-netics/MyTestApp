@@ -16,9 +16,7 @@ module.exports = {
     publicPath: "/",
     chunkFilename: "[name].bundle.js",
   },
-  devServer: {
-    port: 3000,
-  },
+
   module: {
     rules: [
       {
