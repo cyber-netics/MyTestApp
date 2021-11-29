@@ -32,8 +32,8 @@ jobs:
       - name: Edge
         run: npm run test:headless edge
 
-      - name: Chrome
-        run: npm run test:headless chrome
+      # - name: Chrome
+      #   run: npm run test:headless chrome
 
       # - name: Electron
       #   run: npm run test:headless electron

@@ -15,7 +15,7 @@
     "build": "npm run rollup",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "test": "cypress open-ct --browser $browser",
+    "test": "cypress open-ct --browser edge",
     "test:headless": "cypress run-ct --config-file ./cypress.json --config video=false --browser $browser"
   },
   "devDependencies": {
