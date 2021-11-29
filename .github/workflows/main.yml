@@ -4,7 +4,6 @@ on:
 jobs:
   setup-node_modules:
     steps:
-      ...
       - name: Cache node modules
         uses: actions/cache@v1
         with:
@@ -16,7 +15,6 @@ jobs:
 
       - name: npm install
         run: npm install
-
 
   parallel-build1:
     run-on: windows-latest
@@ -30,7 +28,6 @@ jobs:
           # no restore-keys here, so we only accept this exact version
       - name: Chrome
         run: npm run headless:chrome
-
 
   parallel-build2:
     run-on: windows-latest
