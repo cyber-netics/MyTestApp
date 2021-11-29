@@ -3,7 +3,7 @@ on:
     branches: ["*"]
 
 jobs:
-  chrome:
+  edge:
     runs-on: windows-latest
 
     steps:
@@ -37,7 +37,7 @@ jobs:
       - name: Edge
         run: npm run test:edge
 
-  tests2:
+  chrome:
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
 
@@ -63,6 +63,11 @@ jobs:
         with:
           path: C:\Users\runneradmin\AppData\Local\Cypress\Cache
           key: cypress-binary-${{ hashFiles('package-lock.json') }}
+
+      - name: Install
+        run: |
+          npm install
+          npx cypress install
 
       - name: Chrome
         run: npm run test:chrome
