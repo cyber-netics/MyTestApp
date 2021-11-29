@@ -26,9 +26,6 @@ jobs:
         run: |
           npm install
 
-      - name: Browsers
-        run: npx cypress info
-
       - name: Edge
         run: npm run test:edge
 
@@ -60,9 +57,6 @@ jobs:
       - name: Install
         run: |
           npm install
-
-      - name: Browsers
-        run: npx cypress info
 
       - name: Chrome
         run: npm run test:chrome
