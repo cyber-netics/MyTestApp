@@ -67,7 +67,6 @@ jobs:
       - name: Install
         run: |
           npm install
-          npx cypress install
 
       - name: Chrome
         run: npm run test:chrome
