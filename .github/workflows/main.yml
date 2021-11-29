@@ -67,6 +67,7 @@ jobs:
       - name: Install
         run: |
           npm install
+          npx cypress install
 
       - name: Chrome
         run: npm run test:chrome
@@ -101,6 +102,7 @@ jobs:
       - name: Install
         run: |
           npm install
+          npx cypress install
 
       - name: firefox
         run: npm run test:firefox
