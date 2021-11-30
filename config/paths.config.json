@@ -3,7 +3,8 @@
     "allowSyntheticDefaultImports": true,
     "paths": {
       "Components/*": ["./src/Components/*"],
-      "Shared/*": ["./src/Shared/*"]
+      "Shared/*": ["./src/Shared/*"],
+      "Assets/*": ["./src/Assets/*"]
     }
   }
 }
