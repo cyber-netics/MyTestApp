@@ -1,5 +1,6 @@
 import React from "react";
-import arrowImg from "Components/Icons/test.svg";
+import arrow from "./icon/img.png";
+
 import {
   Wrapper,
   SelectElem,
@@ -39,7 +40,7 @@ const Select: React.FC<SelectProps> = (props) => {
         })}
       </SelectElem>
       <Caret>
-        <Arrow src={arrowImg} />
+        <Arrow src={arrow} />
       </Caret>
     </Wrapper>
   );

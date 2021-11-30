@@ -4,7 +4,6 @@ export { default as Checkbox } from "./Components/Checkbox";
 export { default as Radio } from "./Components/Radio";
 export { default as Select } from "./Components/Select";
 export { default as Thumbnail } from "Components/Thumbnail";
-export { default as Icons } from "Components/Icons/test.svg";
 
 export * from "Components/Grid";
 export * from "./Components/Input";
