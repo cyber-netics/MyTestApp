@@ -46,17 +46,13 @@ const Select: React.FC<SelectProps> = (props) => {
 };
 
 export const Group: React.FC<GroupProps> = (props) => {
-  return (
-    <GroupElem label={props.label}>
-      <>{props.children}</>
-    </GroupElem>
-  );
+  return <GroupElem label={props.label}>{props.children}</GroupElem>;
 };
 
 export const Option: React.FC<OptionProps> = (props) => {
   return (
     <OptionElem sizeType={props.size} value={props.value}>
-      <>{props.children}</>
+      {props.children}
     </OptionElem>
   );
 };

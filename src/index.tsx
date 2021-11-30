@@ -8,6 +8,7 @@ import Checkbox from "./Components/Checkbox";
 import Radio from "./Components/Radio";
 import Select, { Option } from "./Components/Select";
 import { InputNumber } from "./Components/Input";
+import Thumbnail from "Components/Thumbnail";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -35,9 +36,22 @@ ReactDOM.render(
 
       <div>
         <Select>
-          <Option key="opt1">Option One</Option>
-          <Option key="opt2">Option Two</Option>
+          <Option key="opt1" value="Option One">
+            Option One
+          </Option>
+          <Option key="opt2" value="Option Two">
+            Option Two
+          </Option>
         </Select>
+      </div>
+
+      <div>
+        <Thumbnail
+          alt={"imageName"}
+          src={
+            "https://cdn.shopify.com/s/files/1/0009/3080/7852/products/16_2_small.jpg?v=1629541016"
+          }
+        />
       </div>
     </div>
   </React.StrictMode>,
