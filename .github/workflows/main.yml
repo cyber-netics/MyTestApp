@@ -25,7 +25,7 @@ jobs:
 
       - name: Install
         run: |
-          npm install
+          npm run setup
           npx cypress install
 
       - name: firefox
@@ -58,7 +58,7 @@ jobs:
 
       - name: Install
         run: |
-          npm install
+          npm run setup
           npx cypress install
 
       - name: Edge
@@ -93,7 +93,7 @@ jobs:
 
       - name: Install
         run: |
-          npm install
+          npm run setup
           npx cypress install
 
       - name: Chrome
