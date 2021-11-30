@@ -10,6 +10,8 @@ declare global {
       pseudoCss(css: string, pseudo?: string): Cypress.Chainable<Element>;
       parseColor(type?: string): Cypress.Chainable<string>;
       borderColor(options: string, color: string): Chainer<Subject>;
+      pxToNumber(): Cypress.Chainable<Element>;
+      approximatly(num: number, deleta?: number): Cypress.Chainable<Element>;
     }
   }
 }

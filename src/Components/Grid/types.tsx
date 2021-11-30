@@ -8,9 +8,11 @@ export interface GridProps {
 }
 
 export interface RowProps {
+  className?: string;
   children: JSX.Element | JSX.Element[];
 }
 
 export interface ColProps extends GridProps {
+  className?: string;
   children: JSX.Element;
 }

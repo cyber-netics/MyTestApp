@@ -2,6 +2,8 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
+
 import Button from "./Components/Button";
 import Badge from "./Components/Badge";
 import Checkbox from "./Components/Checkbox";
@@ -9,11 +11,39 @@ import Radio from "./Components/Radio";
 import Select, { Option } from "./Components/Select";
 import { InputNumber } from "./Components/Input";
 import Thumbnail from "Components/Thumbnail";
+import { Row, Col } from "Components/Grid";
+import styled from "styled-components";
+
+const Container = styled.div`
+  html body {
+    margin: 0 !important;
+  }
+`;
 
 ReactDOM.render(
   <React.StrictMode>
-    <div>
-      <div>
+    <Container style={{ width: "100%", margin: "0" }}>
+      <Row>
+        <Col md={2} xl={2}>
+          <div
+            style={{
+              borderRight: "1px solid #ffff",
+              height: "15px",
+              backgroundColor: "red",
+            }}
+          ></div>
+        </Col>
+        <Col md={2} xl={2}>
+          <div
+            style={{
+              borderRight: "1px solid #ffff",
+              height: "15px",
+              backgroundColor: "red",
+            }}
+          ></div>
+        </Col>
+      </Row>
+      {/* <div>
         <Button className="btn-element" color="primary">
           Submit
         </Button>
@@ -52,8 +82,8 @@ ReactDOM.render(
             "https://cdn.shopify.com/s/files/1/0009/3080/7852/products/16_2_small.jpg?v=1629541016"
           }
         />
-      </div>
-    </div>
+      </div> */}
+    </Container>
   </React.StrictMode>,
   document.getElementById("root")
 );
