@@ -1,6 +1,8 @@
 declare global {
-  // onClick event
+  // Events
   type ButtonEvent = React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>;
+  type EventOnChange = React.FormEvent<HTMLInputElement>;
+  type OnChangeTarget = { value: string; name: string };
 
   // Dynamic
   type IColorTypes = "primary" | "dark";

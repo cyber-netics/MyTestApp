@@ -23,7 +23,7 @@ const colors = [
   { name: "Background", css: "background-color", mock: primaryColors },
 ];
 
-describe("Interactive", () => {
+describe("Interactive", { browser: "chrome" || "edge" }, () => {
   describe("Checked Hover", () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {
@@ -78,7 +78,6 @@ describe("Dynamic Colors", () => {
           const color = des.mock({ colorType });
 
           cy.get(".checkbox-element")
-            .onHover()
             .click()
             .should("have.css", des.css, color);
           cy.log(`Color: ${colorType} - ${color}`);

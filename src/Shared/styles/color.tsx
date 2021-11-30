@@ -2,6 +2,7 @@ import { css } from "styled-components";
 import { colors } from "../theme";
 
 import {
+  primaryShadow,
   primaryColors,
   secondaryColors,
   primaryFontColors,
@@ -35,4 +36,16 @@ export const borderPrimary = css`
 
 export const borderDefault = css`
   border-color: ${colors.highlight};
+`;
+
+export const borderError = css`
+  border-color: ${colors.error};
+`;
+
+export const borderShadowError = css`
+  box-shadow: 0 0 0 2px ${colors.error1};
+`;
+
+export const shadowPrimary = css`
+  box-shadow: 0 0 0 2px ${primaryShadow};
 `;
