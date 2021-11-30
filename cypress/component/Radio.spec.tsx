@@ -8,6 +8,7 @@ import {
   primaryColors,
   secondaryHeight,
   primaryFontSize,
+  secondaryColors,
 } from "Shared/dynamic";
 
 const Element: React.FC<RadioProps> = (props) => (
@@ -26,9 +27,10 @@ describe("Dynamic Colors", () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {
         mount(<Element color={colorType}>Submit</Element>);
-        const color = primaryColors({ colorType });
+        const color = secondaryColors({ colorType });
+        cy.get(".exo-radio").invoke("show").check({ force: true });
+
         cy.get(".radio-element")
-          .click()
           .pseudoCss("background-color", "after")
           .parseColor()
           .should("equal", color);

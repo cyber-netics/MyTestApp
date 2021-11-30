@@ -28,6 +28,7 @@ const Radio: React.FC<RadioProps> = (props) => {
           sizeType={props.size}
           colorType={props.color}
           onChange={handleOnChange}
+          className='exo-radio'
         />
         <Mark className={props.className} sizeType={props.size}>
           {props.children && (
