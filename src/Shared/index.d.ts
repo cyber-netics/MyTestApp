@@ -8,6 +8,15 @@ declare global {
   type IColorTypes = "primary" | "dark";
   type ISizeTypes = "small" | "medium" | "large";
   type IStatusColorTypes = "success" | "error" | "neutral";
+  type IDarkLightColorTypes = "dark" | "light";
+
+  interface InnerDarkLightColorTypes {
+    colorType?: IDarkLightColorTypes;
+  }
+
+  interface ElemDarkLightColorTypes {
+    color?: IDarkLightColorTypes;
+  }
 
   // Dynamic colors/Sizes
   interface ElemSizeTypes {

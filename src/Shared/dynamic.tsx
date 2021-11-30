@@ -40,7 +40,7 @@ export const secondaryFontColors = ({
 
 export const primaryHighlight = ({
   colorType = "primary",
-}: InnerColorTypes) => {
+}: InnerDarkLightColorTypes | InnerColorTypes) => {
   return theme.colors.highlight.primary[colorType];
 };
 

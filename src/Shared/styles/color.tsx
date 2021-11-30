@@ -5,6 +5,7 @@ import {
   primaryShadow,
   primaryColors,
   secondaryColors,
+  primaryHighlight,
   primaryFontColors,
   secondaryFontColors,
   primaryStatusColors,
@@ -52,4 +53,8 @@ export const borderShadowError = css`
 
 export const shadowPrimary = css`
   box-shadow: 0 0 0 2px ${primaryShadow};
+`;
+
+export const backgroundHighlight = css`
+  background-color: ${primaryHighlight};
 `;
