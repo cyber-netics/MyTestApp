@@ -1,7 +1,7 @@
 import React from "react";
 import { Wrapper, BadgeElem, IShapeTypes } from "./styles";
 
-export interface BadgeProps extends ElemSizeTypes, ElemColorTypes {
+export interface BadgeProps extends ElemSizeTypes, ElemStatusColorTypes {
   count?: number;
   className?: string;
   shape?: IShapeTypes;
@@ -14,7 +14,7 @@ const Badge: React.FC<BadgeProps> = (props) => {
       <BadgeElem
         shape={props.shape}
         sizeType={props.size}
-        // colorType={props.color}
+        colorType={props.color}
       >
         <>{props.count && props.shape !== "dot" && props.count}</>
       </BadgeElem>

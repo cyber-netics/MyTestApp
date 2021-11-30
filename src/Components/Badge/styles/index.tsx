@@ -14,14 +14,14 @@ const dynamicShape = css<InnerProps>`
   }};
 `;
 
+export const Wrapper = styled.span<InnerSizeTypes>`
+  ${wrapper};
+  ${sizeSecondary};
+`;
+
 export const BadgeElem = styled.span<InnerProps>`
   ${badgeBase};
   ${dynamicShape};
   ${statusPrimary};
   ${fontSizeSecondary};
-`;
-
-export const Wrapper = styled.span<InnerSizeTypes>`
-  ${wrapper};
-  ${sizeSecondary};
 `;

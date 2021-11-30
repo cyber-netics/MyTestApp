@@ -6,14 +6,15 @@ export const wrapper = css`
 `;
 
 export const badgeBase = css`
+  color: #fff;
+  margin: 1px;
   position: absolute;
   white-space: nowrap;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 0 0 1px #fff;
-  border: 1px solid #fff;
-  color: #fff;
   border-radius: 50%;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 1px #fff;
 `;
 
 export const dot = css`
