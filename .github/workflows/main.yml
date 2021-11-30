@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          key: node-modules-1${{ hashFiles('package-lock.json') }}
 
       - name: Install
         run: |
@@ -47,14 +47,14 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          key: node-modules-1${{ hashFiles('package-lock.json') }}
 
       - name: Cache Cypress Binary
         id: cache-cypress-binary
         uses: actions/cache@v2
         with:
           path: C:\Users\runneradmin\AppData\Local\Cypress\Cache
-          key: cypress-binary-${{ hashFiles('C:\Users\runneradmin\AppData\Local\Cypress\Cache') }}
+          key: cypress-binary-1${{ hashFiles('C:\Users\runneradmin\AppData\Local\Cypress\Cache') }}
 
       - name: Install
         run: |
@@ -82,14 +82,14 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}
+          key: node-modules-1${{ hashFiles('package-lock.json') }}
 
       - name: Cache Cypress Binary
         id: cache-cypress-binary
         uses: actions/cache@v2
         with:
           path: /github/home/.cache/Cypress
-          key: cypress-binary-${{ hashFiles('/github/home/.cache/Cypress') }}
+          key: cypress-binary-1${{ hashFiles('/github/home/.cache/Cypress') }}
 
       - name: Install
         run: |
