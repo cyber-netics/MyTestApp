@@ -19,7 +19,7 @@ export const backgroundPrimary = css`
 `;
 
 export const backgroundSecondary = css`
-  background-color: ${secondaryColors};
+  background-color: ${secondaryColors} !important;
 `;
 
 export const fontColorSecondary = css`
@@ -32,6 +32,10 @@ export const statusPrimary = css`
 
 export const borderPrimary = css`
   border-color: ${primaryColors};
+`;
+
+export const borderSecondary = css`
+  border-color: ${secondaryColors};
 `;
 
 export const borderDefault = css`

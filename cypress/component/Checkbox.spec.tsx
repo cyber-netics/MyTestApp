@@ -23,7 +23,20 @@ const sizes = [
 ];
 
 describe("Dynamic Colors", () => {
-  describe("Clicked", () => {
+  describe("UnChecked", () => {
+    colorList.forEach((colorType) => {
+      it(colorType, () => {
+        mount(<Element color={colorType} />);
+        cy.get(".checkbox-element").should(
+          "have.css",
+          "background-color",
+          colors.noColor
+        );
+      });
+    });
+  });
+
+  describe("Checked", () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {
         mount(<Element color={colorType}>Submit</Element>);
@@ -35,18 +48,19 @@ describe("Dynamic Colors", () => {
       });
     });
   });
+});
 
-  describe("Not Clicked", () => {
-    colorList.forEach((colorType) => {
-      it(colorType, () => {
-        mount(<Element color={colorType}>Submit</Element>);
-        const color = primaryColors({ colorType });
+describe("Dynamic Sizes", () => {
+  sizes.forEach((des) => {
+    describe(des.name, () => {
+      sizeList.forEach((sizeType) => {
+        it(sizeType, () => {
+          mount(<Element size={sizeType}>Submit</Element>);
+          const size = des.mock({ sizeType });
 
-        cy.get(".checkbox-element").should(
-          "have.css",
-          "background-color",
-          colors.noColor
-        );
+          cy.get(".checkbox-element").should("have.css", des.css, size);
+          cy.log(`Size: ${sizeType} - ${size}`);
+        });
       });
     });
   });
@@ -70,23 +84,7 @@ describe("Wave Animation", { browser: "chrome" || "edge" }, () => {
   });
 });
 
-describe("Dynamic Sizes", () => {
-  sizes.forEach((des) => {
-    describe(des.name, () => {
-      sizeList.forEach((sizeType) => {
-        it(sizeType, () => {
-          mount(<Element size={sizeType}>Submit</Element>);
-          const size = des.mock({ sizeType });
-
-          cy.get(".checkbox-element").should("have.css", des.css, size);
-          cy.log(`Size: ${sizeType} - ${size}`);
-        });
-      });
-    });
-  });
-});
-
-describe("Interactive", { browser: "chrome" || "edge" }, () => {
+describe("Interactive Colors", { browser: "chrome" || "edge" }, () => {
   describe("Checked Hover", () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {

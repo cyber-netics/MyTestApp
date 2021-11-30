@@ -19,6 +19,7 @@ export const label = css`
 export const wrapper = css`
   width: 100%;
   height: 100%;
+  position: relative;
   white-space: nowrap;
   box-sizing: border-box;
 `;

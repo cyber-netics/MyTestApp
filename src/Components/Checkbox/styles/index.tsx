@@ -44,6 +44,7 @@ export const Input = styled.input<InnerColorTypes>`
   &:checked + ${Mark} {
     ${borderPrimary};
     ${backgroundPrimary};
+    
     &:hover {
       ${backgroundSecondary};
     }

@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import Button from "./Components/Button";
 import Badge from "./Components/Badge";
 import Checkbox from "./Components/Checkbox";
+import Radio from "./Components/Radio";
 import { InputNumber } from "./Components/Input";
 
 ReactDOM.render(
@@ -26,6 +27,9 @@ ReactDOM.render(
       </div>
       <div>
         <InputNumber />
+      </div>
+      <div>
+        <Radio />
       </div>
     </div>
   </React.StrictMode>,
