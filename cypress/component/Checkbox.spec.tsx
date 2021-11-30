@@ -46,7 +46,7 @@ describe("Interactive", { browser: "chrome" || "edge" }, () => {
         mount(<Element color={colorType}>Submit</Element>);
         const color = primaryColors({ colorType });
 
-        cy.get(".checkbox-element").children().invoke("mouseover").onHover();
+        cy.get(".checkbox-element").children().invoke("mouseover").onHover().wait(3);
         cy.get(".checkbox-element").should("have.css", "border-color", color);
       });
     });
@@ -78,6 +78,7 @@ describe("Dynamic Colors", () => {
           const color = des.mock({ colorType });
 
           cy.get(".checkbox-element")
+            .wait(3)
             .click()
             .should("have.css", des.css, color);
           cy.log(`Color: ${colorType} - ${color}`);

@@ -6,8 +6,9 @@ declare global {
     interface Chainable {
       timesToClick([...args]: "Once" | "Twice"): Cypress.Chainable<Element>;
       onHover(): Cypress.Chainable<Element>;
+      noTransition(): Cypress.Chainable<Element>;
       pseudoCss(css: string, pseudo?: string): Cypress.Chainable<Element>;
-      parseColor(): Cypress.Chainable<string>;
+      parseColor(type?: string): Cypress.Chainable<string>;
     }
   }
 }
