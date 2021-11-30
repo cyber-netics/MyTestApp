@@ -8,6 +8,7 @@ import {
   secondaryHeight,
   primaryFontSize,
   primaryColors,
+  secondaryColors,
 } from "Shared/dynamic";
 
 const Element: React.FC<CheckboxProps> = (props) => (
@@ -51,6 +52,24 @@ describe("Dynamic Colors", () => {
   });
 });
 
+describe("Wave Animation", { browser: "chrome" || "edge" }, () => {
+  colorList.forEach((colorType) => {
+    it(colorType, () => {
+      mount(<Element color={colorType}>Submit</Element>);
+      const color = secondaryColors({ colorType });
+
+      cy.get(".checkbox-element")
+        .click()
+        .parent()
+        .onHover()
+        .wait(1)
+        .pseudoCss("box-shadow", "after")
+        .parseColor()
+        .should("equal", color);
+    });
+  });
+});
+
 describe("Dynamic Sizes", () => {
   sizes.forEach((des) => {
     describe(des.name, () => {
@@ -90,11 +109,7 @@ describe("Interactive", { browser: "chrome" || "edge" }, () => {
         mount(<Element color={colorType}>Submit</Element>);
         const color = primaryColors({ colorType });
 
-        cy.get(".checkbox-element")
-          .children()
-          .invoke("mouseover")
-          .onHover()
-          .wait(3);
+        cy.get(".checkbox-element").children().invoke("mouseover").onHover();
         cy.get(".checkbox-element").should("have.css", "border-color", color);
       });
     });

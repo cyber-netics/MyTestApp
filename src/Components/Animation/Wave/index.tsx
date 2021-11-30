@@ -24,3 +24,11 @@ export const waveAnimation = css`
     ${borderRadius};
   }
 `;
+
+export interface WaveOnFocusProps extends InnerColorTypes {
+  focus?: boolean;
+}
+
+export const waveOnFocus = css<{ focus?: boolean }>`
+  ${({ focus }) => (focus ? waveAnimation : null)};
+`;

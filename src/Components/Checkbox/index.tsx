@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Label, Wrapper, Input, Mark, LabelText } from "./styles";
 
 export interface CheckboxProps extends ElemSizeTypes, ElemColorTypes {
@@ -9,15 +9,43 @@ export interface CheckboxProps extends ElemSizeTypes, ElemColorTypes {
 
 const Checkbox: React.FC<CheckboxProps> = (props) => {
   const [checked, setCheck] = useState(false);
+  const [focus, setFocus] = useState(false);
+  const mountedRef = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
+
+  const focusAnim = () => {
+    setFocus(true);
+    setTimeout(() => {
+      if (mountedRef.current && !focus) setFocus(false);
+    }, 700);
+  };
+
+  const handleClick = () => {
+    if (props.onChange) props.onChange();
+  };
+
+  const onChange = () => {
+    focusAnim();
+    handleClick();
+    setCheck(!checked);
+  };
 
   return (
     <Label>
-      <Wrapper>
+      <Wrapper
+        focus={focus}
+        colorType={props.color}
+        className="exo-checkbox-wrapper"
+      >
         <Input
           type="checkbox"
-          id="checkbox-inner"
           colorType={props.color}
-          onChange={() => setCheck(!checked)}
+          onChange={() => onChange()}
         />
         <Mark
           checked={true}

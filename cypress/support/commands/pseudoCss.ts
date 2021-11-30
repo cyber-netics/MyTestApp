@@ -8,6 +8,5 @@ export const pseudoCss = (elem: Subject, style: number, psudo?: string) => {
     elem[0],
     `:${psudo || ""}`
   );
-
   return elemStyles[style];
 };

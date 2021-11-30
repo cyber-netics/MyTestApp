@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = (props) => {
   const focusAnim = () => {
     setFocus(true);
     setTimeout(() => {
-      if (mountedRef.current) setFocus(false);
+      if (mountedRef.current && !focus) setFocus(false);
     }, 700);
   };
 

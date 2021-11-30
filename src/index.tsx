@@ -19,11 +19,12 @@ ReactDOM.render(
         <Badge size="small" />
       </div>
       <div>
-        <Checkbox size="small" />
+        <Checkbox size="large" />
       </div>
       <div>
-        <InputNumber />
+        <Checkbox size="large" />
       </div>
+      <div>{/* <InputNumber /> */}</div>
     </div>
   </React.StrictMode>,
   document.getElementById("root")

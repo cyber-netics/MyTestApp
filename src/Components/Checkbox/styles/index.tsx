@@ -8,6 +8,7 @@ import {
   fontSizePrimary,
   backgroundSecondary,
 } from "Shared/styles";
+import { waveOnFocus, WaveOnFocusProps } from "Components/Animation/Wave";
 
 interface InnerElemProps extends InnerColorTypes, InnerSizeTypes {
   checked: boolean;
@@ -21,8 +22,11 @@ export const LabelText = styled.div`
   ${labelText};
 `;
 
-export const Wrapper = styled.span`
+export const Wrapper = styled.span.attrs({
+  radius: "4",
+})<WaveOnFocusProps>`
   ${wrapper};
+  ${waveOnFocus};
 `;
 
 export const Mark = styled.span<InnerElemProps>`

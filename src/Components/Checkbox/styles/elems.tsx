@@ -9,6 +9,7 @@ export const label = css`
 
   &:after {
     width: 0;
+    height: 0;
     content: "\a0";
     overflow: hidden;
     display: inline-block;

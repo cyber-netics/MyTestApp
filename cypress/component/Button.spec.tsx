@@ -35,7 +35,7 @@ const colors = [
   { name: "Font", css: "color", mock: primaryFontColors },
 ];
 
-const interactiveColorTest = [
+const interactive = [
   {
     name: "Hover",
     css: "backgroundColor",
@@ -52,7 +52,7 @@ const interactiveColorTest = [
 ];
 
 describe("Interactive", () => {
-  interactiveColorTest.forEach((des) => {
+  interactive.forEach((des) => {
     describe(des.name, { browser: des.browser }, () => {
       colorList.forEach((colorType) => {
         it(colorType, () => {
