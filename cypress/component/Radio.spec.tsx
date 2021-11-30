@@ -27,8 +27,9 @@ describe("Dynamic Colors", () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {
         mount(<Element color={colorType}>Submit</Element>);
-        const color = secondaryColors({ colorType });
+        const color = primaryColors({ colorType });
         cy.get(".exo-radio").invoke("show").check({ force: true });
+        cy.get(".exo-radio").invoke("show")
 
         cy.get(".radio-element")
           .pseudoCss("background-color", "after")

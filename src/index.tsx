@@ -6,6 +6,7 @@ import Button from "./Components/Button";
 import Badge from "./Components/Badge";
 import Checkbox from "./Components/Checkbox";
 import Radio from "./Components/Radio";
+import Select, { Option } from "./Components/Select";
 import { InputNumber } from "./Components/Input";
 
 ReactDOM.render(
@@ -30,6 +31,13 @@ ReactDOM.render(
       </div>
       <div>
         <Radio />
+      </div>
+
+      <div>
+        <Select>
+          <Option key="opt1">Option One</Option>
+          <Option key="opt2">Option Two</Option>
+        </Select>
       </div>
     </div>
   </React.StrictMode>,
