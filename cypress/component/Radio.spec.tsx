@@ -23,19 +23,16 @@ const sizeTests = [
 ];
 
 describe("Dynamic Colors", () => {
-  describe("Clicked", () => {
-    colorList.forEach((colorType) => {
-      it(colorType, () => {
-        mount(<Element color={colorType}>Submit</Element>);
-        const color = primaryColors({ colorType });
-        cy.get(".exo-radio").invoke("show").check({ force: true });
-        cy.get(".exo-radio").invoke("show")
+  colorList.forEach((colorType) => {
+    it(colorType, () => {
+      mount(<Element color={colorType} />);
+      const color = primaryColors({ colorType });
 
-        cy.get(".radio-element")
-          .pseudoCss("background-color", "after")
-          .parseColor()
-          .should("equal", color);
-      });
+      cy.get(".radio-element").click();
+      cy.get(".radio-element")
+        .pseudoCss("background-color", "after")
+        .parseColor()
+        .should("equal", color);
     });
   });
 });
