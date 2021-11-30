@@ -23,229 +23,209 @@ const Element: React.FC<InputCustomProps> = (props) => {
 const sizeTests = [{ name: "Height", css: "min-height", mock: primaryHeight }];
 const inputTypes: InputTypes[] = ["input", "email", "number"];
 
-describe("test", () => {
-  it("xxx", () => {
-    <Element>Submit</Element>;
+/**
+ *
+ *
+ */
+describe("Dynamic Sizes", () => {
+  inputTypes.forEach((inputType) => {
+    describe(inputType, () => {
+      sizeTests.forEach((des) => {
+        describe(des.name, () => {
+          sizeList.forEach((sizeType) => {
+            it(sizeType, () => {
+              mount(
+                <Element size={sizeType} inputType={inputType}>
+                  Submit
+                </Element>
+              );
+              const size = des.mock({ sizeType });
+
+              cy.get(".input-element").should("have.css", des.css, size);
+              cy.log(`Size: ${sizeType} - ${size}`);
+            });
+          });
+        });
+      });
+    });
   });
 });
 
-// /**
-//  *
-//  *
-//  */
-// describe("Dynamic Sizes", () => {
-//   inputTypes.forEach((inputType) => {
-//     describe(inputType, () => {
-//       sizeTests.forEach((des) => {
-//         describe(des.name, () => {
-//           sizeList.forEach((sizeType) => {
-//             it(sizeType, () => {
-//               mount(
-//                 <Element size={sizeType} inputType={inputType}>
-//                   Submit
-//                 </Element>
-//               );
-//               const size = des.mock({ sizeType });
+describe("Dynamic Colors", () => {
+  inputTypes.forEach((inputType) => {
+    describe(inputType, () => {
+      colorList.forEach((colorType) => {
+        describe(colorType, () => {
+          beforeEach(() => {
+            mount(
+              <Element color={colorType} inputType={inputType}>
+                Submit
+              </Element>
+            );
+            cy.get("input.input-element").invoke("show").onHover();
+          });
 
-//               cy.get(".input-element").should("have.css", des.css, size);
-//               cy.log(`Size: ${sizeType} - ${size}`);
-//             });
-//           });
-//         });
-//       });
-//     });
-//   });
-// });
+          it("border", () => {
+            const borderColor = primaryColors({ colorType });
+            cy.get(".input-element")
+              .focus()
+              .should("have.css", "border-color", borderColor);
+          });
 
-// describe("Dynamic Colors", () => {
-//   inputTypes.forEach((inputType) => {
-//     describe(inputType, () => {
-//       colorList.forEach((colorType) => {
-//         describe(colorType, () => {
-//           beforeEach(() => {
-//             mount(
-//               <Element color={colorType} inputType={inputType}>
-//                 Submit
-//               </Element>
-//             );
-//             cy.get("input.input-element").invoke("show").onHover();
-//           });
+          it("shadow", () => {
+            const shadowColor = primaryShadow({ colorType });
+            cy.get("input.input-element")
+              .focus()
+              .pseudoCss("box-shadow")
+              .parseColor("rgba")
+              .should("equal", shadowColor);
+          });
+        });
+      });
+    });
+  });
+});
 
-//           it("border", () => {
-//             const borderColor = primaryColors({ colorType });
-//             cy.get(".input-element")
-//               .focus()
-//               .should("have.css", "border-color", borderColor);
-//           });
+describe("Hover", () => {
+  inputTypes.forEach((inputType) => {
+    describe(inputType, () => {
+      colorList.forEach((colorType) => {
+        it(colorType, () => {
+          mount(
+            <Element color={colorType} inputType={inputType}>
+              Submit
+            </Element>
+          );
+          const color = primaryColors({ colorType });
 
-//           it("shadow", () => {
-//             const shadowColor = primaryShadow({ colorType });
-//             cy.get("input.input-element")
-//               .focus()
-//               .pseudoCss("box-shadow")
-//               .parseColor("rgba")
-//               .should("equal", shadowColor);
-//           });
-//         });
-//       });
-//     });
-//   });
-// });
+          cy.get(".input-element")
+            .click()
+            .onHover()
+            .pseudoCss("border-color")
+            .parseColor()
+            .should("equal", color);
+        });
+      });
+    });
+  });
+});
 
-// describe("Hover", () => {
-//   describe(inputType, () => {
-//     colorList.forEach((colorType) => {
-//       it(colorType, () => {
-//         mount(
-//           <Element color={colorType} inputType={inputType}>
-//             Submit
-//           </Element>
-//         );
-//         const color = primaryColors({ colorType });
+describe("Focus", () => {
+  inputTypes.forEach((inputType) => {
+    describe(inputType, () => {
+      colorList.forEach((colorType) => {
+        describe(colorType, () => {
+          beforeEach(() => {
+            mount(
+              <Element color={colorType} inputType={inputType}>
+                Submit
+              </Element>
+            );
+            cy.get("input.input-element").invoke("show").onHover();
+          });
 
-//         cy.get(".input-element")
-//           .click()
-//           .onHover()
-//           .pseudoCss("border-color")
-//           .parseColor()
-//           .should("equal", color);
-//       });
-//     });
-//   });
-// });
+          it("border", () => {
+            const borderColor = primaryColors({ colorType });
+            cy.get(".input-element")
+              .focus()
+              .should("have.css", "border-color", borderColor);
+          });
 
-// describe("Input Text", () => {
-//   const verifyErrorBorder = (inputText: string, hasErr: boolean) => {
-//     cy.get(".input-element")
-//       .type(inputText)
-//       .blur()
-//       .invoke("val")
-//       .then((text) => {
-//         expect(text).equal(inputText);
-//       });
+          it("shadow", () => {
+            const shadowColor = primaryShadow({ colorType });
+            cy.get("input.input-element")
+              .focus()
+              .pseudoCss("box-shadow")
+              .parseColor("rgba")
+              .should("equal", shadowColor);
+          });
+        });
+      });
+    });
+  });
+});
 
-//     cy.get(".input-element").should(
-//       `${!hasErr ? "not." : ""}have.css`,
-//       "border-color",
-//       colors.error
-//     );
-//   };
+describe("Border Error", () => {
+  const verifyEmailInput = (inputText: string, hasErr: boolean) => {
+    cy.get(".input-element")
+      .type(inputText)
+      .blur()
+      .invoke("val")
+      .then((text) => {
+        expect(text).equal(inputText);
+      });
 
-//   describe("Email", () => {
-//     it("InValid Email", () => {
-//       mount(<Element inputType="email">Submit</Element>);
-//       verifyErrorBorder("testing email input", true);
-//     });
+    cy.get(".input-element").should(
+      `${!hasErr ? "not." : ""}have.css`,
+      "border-color",
+      colors.error
+    );
+  };
 
-//     it("Valid Email", () => {
-//       mount(<Element inputType="email">Submit</Element>);
-//       verifyErrorBorder("testing@gmail.com", false);
-//     });
-//   });
-// });
+  const verifyNumberInput = (isValid: boolean, colorType: IColorTypes) => {
+    const borderPrimary = primaryColors({ colorType });
+    const color = isValid ? colors.error : borderPrimary;
 
-// inputTypes.forEach((inputType) => {
-//   describe("Dynamic Sizes", () => {
-//     describe(inputType, () => {
-//       sizeTests.forEach((des) => {
-//         describe(des.name, () => {
-//           sizeList.forEach((sizeType) => {
-//             it(sizeType, () => {
-//               mount(
-//                 <Element size={sizeType} inputType={inputType}>
-//                   Submit
-//                 </Element>
-//               );
-//               const size = des.mock({ sizeType });
+    cy.get(".input-element")
+      .type("testing")
+      .should("have.css", "border-color", color);
+  };
 
-//               cy.get(".input-element").should("have.css", des.css, size);
-//               cy.log(`Size: ${sizeType} - ${size}`);
-//             });
-//           });
-//         });
-//       });
-//     });
+  describe("Error Prop", () => {
+    beforeEach(() => {
+      mount(<Element error={true}>Testing</Element>);
+    });
 
-//     describe("Focus", () => {
-//       describe(inputType, () => {
-//         colorList.forEach((colorType) => {
-//           describe(colorType, () => {
-//             beforeEach(() => {
-//               mount(
-//                 <Element color={colorType} inputType={inputType}>
-//                   Submit
-//                 </Element>
-//               );
-//               cy.get("input.input-element").invoke("show").onHover();
-//             });
+    it("border", () => {
+      cy.get(".input-element")
+        .focus()
+        .should("have.css", "border-color", colors.error);
+    });
 
-//             it("border", () => {
-//               const borderColor = primaryColors({ colorType });
-//               cy.get(".input-element")
-//                 .focus()
-//                 .should("have.css", "border-color", borderColor);
-//             });
+    it("shadow", () => {
+      cy.get("input.input-element")
+        .focus()
+        .pseudoCss("box-shadow")
+        .parseColor("rgba")
+        .should("equal", colors.error1);
+    });
+  });
 
-//             it("shadow", () => {
-//               const shadowColor = primaryShadow({ colorType });
-//               cy.get("input.input-element")
-//                 .focus()
-//                 .pseudoCss("box-shadow")
-//                 .parseColor("rgba")
-//                 .should("equal", shadowColor);
-//             });
-//           });
-//         });
-//       });
-//     });
+  colorList.forEach((colorType) => {
+    describe("Email", () => {
+      beforeEach(() => {
+        mount(
+          <Element color={colorType} inputType="email">
+            Submit
+          </Element>
+        );
+      });
 
-//     describe("Error", () => {
-//       describe(inputType, () => {
-//         beforeEach(() => {
-//           mount(
-//             <Element error={true} inputType={inputType}>
-//               Submit
-//             </Element>
-//           );
-//           cy.get("input.input-element").invoke("show").onHover().wait(2);
-//         });
+      it("InValid", () => {
+        verifyEmailInput("testing email input", true);
+      });
 
-//         it("border", () => {
-//           cy.get(".input-element")
-//             .focus()
-//             .should("have.css", "border-color", colors.error);
-//         });
+      it("Valid", () => {
+        verifyEmailInput("testing@gmail.com", false);
+      });
+    });
 
-//         it("shadow", () => {
-//           cy.get("input.input-element")
-//             .focus()
-//             .pseudoCss("box-shadow")
-//             .parseColor("rgba")
-//             .should("equal", colors.error1);
-//         });
-//       });
-//     });
+    describe("Number", () => {
+      beforeEach(() => {
+        mount(
+          <Element color={colorType} inputType="number">
+            Submit
+          </Element>
+        );
+      });
 
-//     describe("Hover", () => {
-//       describe(inputType, () => {
-//         colorList.forEach((colorType) => {
-//           it(colorType, () => {
-//             mount(
-//               <Element color={colorType} inputType={inputType}>
-//                 Submit
-//               </Element>
-//             );
-//             const color = primaryColors({ colorType });
+      it("Invalid", () => {
+        verifyNumberInput(false, colorType);
+      });
 
-//             cy.get(".input-element")
-//               .click()
-//               .onHover()
-//               .pseudoCss("border-color")
-//               .parseColor()
-//               .should("equal", color);
-//           });
-//         });
-//       });
-//     });
-//   });
-// });
+      it("Valid", () => {
+        verifyNumberInput(false, colorType);
+      });
+    });
+  });
+});

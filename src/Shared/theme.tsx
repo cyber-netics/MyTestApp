@@ -17,6 +17,7 @@ export const colors = {
   success: "rgb(82, 196, 26)",
   error: "rgb(255, 77, 79)",
   error1: "rgba(255, 77, 79, 0.3)",
+  noColor: "rgba(0, 0, 0, 0)",
   light: "rgb(255, 255, 255)",
 };
 

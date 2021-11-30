@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Button from "./Components/Button";
 import Badge from "./Components/Badge";
 import Checkbox from "./Components/Checkbox";
-import { Input } from "./Components/Input";
+import { InputNumber } from "./Components/Input";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,7 +22,7 @@ ReactDOM.render(
         <Checkbox size="small" />
       </div>
       <div>
-        <Input />
+        <InputNumber />
       </div>
     </div>
   </React.StrictMode>,

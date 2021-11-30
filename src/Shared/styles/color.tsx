@@ -39,11 +39,11 @@ export const borderDefault = css`
 `;
 
 export const borderError = css`
-  border-color: ${colors.error};
+  border-color: ${colors.error} !important;
 `;
 
 export const borderShadowError = css`
-  box-shadow: 0 0 0 2px ${colors.error1};
+  box-shadow: 0 0 0 2px ${colors.error1} !important;
 `;
 
 export const shadowPrimary = css`

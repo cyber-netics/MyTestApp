@@ -36,7 +36,8 @@ const dynamicBorderError = css<{ error?: boolean }>`
 
 export const InputElem = styled.input<InputElemProps>`
   ${base};
+  ${dynamicBorderError};
+
   ${hightPrimary};
   ${interactiveBorder};
-  ${dynamicBorderError};
 `;
