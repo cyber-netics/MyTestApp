@@ -3,12 +3,14 @@ import commonjs from "@rollup/plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 import external from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
+import image from "@rollup/plugin-image";
+
 const packageJson = require("./package.json");
 
 export default [
   {
     input: "src/index.ts",
-    external: ["react", "react-dom", "styled-components"],
+    external: ["react", "react-dom", "styled-components", "@svgr/rollup"],
     output: [
       {
         file: packageJson.main,
@@ -24,12 +26,13 @@ export default [
     ],
     plugins: [
       external(),
-      resolve(),
+      resolve({ preferBuiltins: false }),
       commonjs({
         include: ["node_modules/**"],
       }),
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
+      image(),
     ],
   },
 ];

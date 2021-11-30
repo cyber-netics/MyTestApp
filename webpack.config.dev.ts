@@ -13,7 +13,7 @@ class Settings {
 
   static mode: "development" = "development";
   static devtool = "eval-cheap-source-map";
-  static extensions: string[] = [".ts", ".tsx", ".js", ".json"];
+  static extensions: string[] = [".ts", ".tsx", ".js", ".json", ".svg"];
   static stats: "errors-only" = "errors-only";
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import arrowImg from "Assets/test.svg";
+import arrowImg from "Components/Icons/test.svg";
 import {
   Wrapper,
   SelectElem,

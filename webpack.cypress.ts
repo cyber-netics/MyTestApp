@@ -4,7 +4,7 @@ import alias from "./config/paths.webpack";
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.jsx"),
   resolve: {
-    extensions: [".js", ".ts", ".jsx", ".tsx"],
+    extensions: [".js", ".ts", ".jsx", ".tsx", ".svg"],
     alias: alias,
   },
   mode: "development",
