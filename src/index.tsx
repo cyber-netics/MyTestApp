@@ -4,6 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Button from "./Components/Button";
 import Badge from "./Components/Badge";
+import Checkbox from "./Components/Checkbox";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,9 @@ ReactDOM.render(
       </div>
       <div>
         <Badge size="medium" />
+      </div>
+      <div>
+        <Checkbox size='small'/>
       </div>
     </div>
   </React.StrictMode>,

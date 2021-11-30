@@ -28,3 +28,11 @@ export const fontColorSecondary = css`
 export const statusPrimary = css`
   background-color: ${primaryStatusColors};
 `;
+
+export const borderPrimary = css`
+  border-color: ${primaryColors};
+`;
+
+export const borderDefault = css`
+  border-color: ${colors.highlight};
+`;

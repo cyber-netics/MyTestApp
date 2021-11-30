@@ -7,7 +7,6 @@ export const wrapper = css`
 
 export const badgeBase = css`
   color: #fff;
-  margin: 1px;
   position: absolute;
   white-space: nowrap;
   font-weight: 600;
@@ -18,8 +17,8 @@ export const badgeBase = css`
 `;
 
 export const dot = css`
-  width: calc(100% - 30%);
-  height: calc(100% - 30%);
+  width: 100%;
+  height: 100%;
 `;
 
 export const overflow = css`
