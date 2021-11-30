@@ -15,7 +15,7 @@ ReactDOM.render(
         </Button>
       </div>
       <div>
-        <Badge size="medium" />
+        <Badge size="small" />
       </div>
       <div>
         <Checkbox size='small'/>

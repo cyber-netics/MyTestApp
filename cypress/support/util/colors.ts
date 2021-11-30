@@ -6,7 +6,7 @@ export const extractRgb = (str: string) => {
   );
 
   if (match === null) {
-    throw new Error("Element dose not contain rgb color");
+    throw new Error("Element does not contain rgb color");
   }
 
   return match[0];
