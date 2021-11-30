@@ -24,7 +24,9 @@ ReactDOM.render(
       <div>
         <Checkbox size="large" />
       </div>
-      <div>{/* <InputNumber /> */}</div>
+      <div>
+        <InputNumber />
+      </div>
     </div>
   </React.StrictMode>,
   document.getElementById("root")

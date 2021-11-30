@@ -27,6 +27,7 @@ const inputTypes: InputTypes[] = ["input", "email", "number"];
  *
  *
  */
+
 describe("Dynamic Sizes", () => {
   inputTypes.forEach((inputType) => {
     describe(inputType, () => {
@@ -56,88 +57,33 @@ describe("Dynamic Colors", () => {
     describe(inputType, () => {
       colorList.forEach((colorType) => {
         describe(colorType, () => {
-          beforeEach(() => {
-            mount(
-              <Element color={colorType} inputType={inputType}>
-                Submit
-              </Element>
-            );
-            cy.get("input.input-element").invoke("show").onHover();
-          });
-
-          it("border", () => {
+          it("focus border", () => {
+            mount(<Element color={colorType} inputType={inputType} />);
             const borderColor = primaryColors({ colorType });
             cy.get(".input-element")
               .focus()
-              .should("have.css", "border-color", borderColor);
+              .borderColor("have.css", borderColor);
           });
 
-          it("shadow", () => {
+          it("focus shadow", () => {
+            mount(<Element color={colorType} inputType={inputType} />);
             const shadowColor = primaryShadow({ colorType });
-            cy.get("input.input-element")
-              .focus()
-              .pseudoCss("box-shadow")
-              .parseColor("rgba")
-              .should("equal", shadowColor);
-          });
-        });
-      });
-    });
-  });
-});
-
-describe("Hover", () => {
-  inputTypes.forEach((inputType) => {
-    describe(inputType, () => {
-      colorList.forEach((colorType) => {
-        it(colorType, () => {
-          mount(
-            <Element color={colorType} inputType={inputType}>
-              Submit
-            </Element>
-          );
-          const color = primaryColors({ colorType });
-
-          cy.get(".input-element")
-            .click()
-            .onHover()
-            .pseudoCss("border-color")
-            .parseColor()
-            .should("equal", color);
-        });
-      });
-    });
-  });
-});
-
-describe("Focus", () => {
-  inputTypes.forEach((inputType) => {
-    describe(inputType, () => {
-      colorList.forEach((colorType) => {
-        describe(colorType, () => {
-          beforeEach(() => {
-            mount(
-              <Element color={colorType} inputType={inputType}>
-                Submit
-              </Element>
-            );
-            cy.get("input.input-element").invoke("show").onHover();
-          });
-
-          it("border", () => {
-            const borderColor = primaryColors({ colorType });
             cy.get(".input-element")
+              .noTransition()
               .focus()
-              .should("have.css", "border-color", borderColor);
-          });
-
-          it("shadow", () => {
-            const shadowColor = primaryShadow({ colorType });
-            cy.get("input.input-element")
-              .focus()
-              .pseudoCss("box-shadow")
+              .should("have.css", "box-shadow")
               .parseColor("rgba")
               .should("equal", shadowColor);
+          });
+
+          it("hover border", () => {
+            mount(<Element color={colorType} inputType={inputType} />);
+            const color = primaryColors({ colorType });
+            cy.get(".input-element")
+              .noTransition()
+              .click()
+              .trigger("mouseover")
+              .borderColor("have.css", color);
           });
         });
       });
@@ -155,9 +101,8 @@ describe("Border Error", () => {
         expect(text).equal(inputText);
       });
 
-    cy.get(".input-element").should(
+    cy.get(".input-element").borderColor(
       `${!hasErr ? "not." : ""}have.css`,
-      "border-color",
       colors.error
     );
   };
@@ -165,27 +110,25 @@ describe("Border Error", () => {
   const verifyNumberInput = (isValid: boolean, colorType: IColorTypes) => {
     const borderPrimary = primaryColors({ colorType });
     const color = isValid ? colors.error : borderPrimary;
-
     cy.get(".input-element")
-      .type("testing")
-      .should("have.css", "border-color", color);
+      .type("input string text")
+      .borderColor("have.css", color);
   };
 
   describe("Error Prop", () => {
     beforeEach(() => {
-      mount(<Element error={true}>Testing</Element>);
+      mount(<Element error={true} />);
     });
 
     it("border", () => {
-      cy.get(".input-element")
-        .focus()
-        .should("have.css", "border-color", colors.error);
+      cy.get(".input-element").focus().borderColor("have.css", colors.error);
     });
 
     it("shadow", () => {
-      cy.get("input.input-element")
+      cy.get(".input-element")
+        .noTransition()
         .focus()
-        .pseudoCss("box-shadow")
+        .should("have.css", "box-shadow")
         .parseColor("rgba")
         .should("equal", colors.error1);
     });
@@ -194,11 +137,7 @@ describe("Border Error", () => {
   colorList.forEach((colorType) => {
     describe("Email", () => {
       beforeEach(() => {
-        mount(
-          <Element color={colorType} inputType="email">
-            Submit
-          </Element>
-        );
+        mount(<Element color={colorType} inputType="email" />);
       });
 
       it("InValid", () => {
