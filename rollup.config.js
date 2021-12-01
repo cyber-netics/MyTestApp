@@ -37,7 +37,7 @@ export default [
 
       external(),
       resolve({
-        extensions: [".js", ".json", ".jsx"],
+        extensions: [".js", ".json", ".jsx", "ts"],
       }),
 
       terser(),
@@ -47,7 +47,7 @@ export default [
   },
   {
     input: "src/Shared/index.d.ts",
-    output: [{ file: "build/src/index.d.ts", format: "esm" }],
+    output: [{ file: "build/src/shared.d.ts", format: "esm" }],
     plugins: [dts()],
   },
 ];
