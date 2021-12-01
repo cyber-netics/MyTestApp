@@ -72,11 +72,12 @@
     "typescript-styled-plugin": "^0.18.1",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.6.0"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^4.6.0",
     "@rollup/plugin-url": "^6.1.0",
     "@svgr/rollup": "^6.0.0",
+    "rollup-plugin-dts": "^4.0.1"
+  },
+  "dependencies": {
     "styled-components": "^5.3.3"
   },
   "repository": {
