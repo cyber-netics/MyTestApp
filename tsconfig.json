@@ -1,7 +1,6 @@
 {
   "extends": "./config/paths.config.json",
   "compilerOptions": {
-    "outDir": "lib",
     "target": "ES2018",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -16,11 +15,12 @@
     "isolatedModules": false,
     "noEmit": true,
     "sourceMap": true,
-    "declaration": true,
-    "declarationDir": "types",
+    "declarationDir": "./",
     "rootDir": ".",
     "jsx": "react",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "declaration": true,
+    "outDir": "build"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
