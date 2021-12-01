@@ -6,6 +6,7 @@ export interface InputProps extends ElemColorTypes, ElemSizeTypes {
   value?: string;
   error?: boolean;
   className?: string;
+  placeholder?: string;
   onBlue?: () => void;
   onChange?: (e: OnChangeTarget) => void;
 }
@@ -25,6 +26,7 @@ export const Input: React.FC<InputProps> = (props) => {
       colorType={props.color}
       onChange={handleOnChange}
       className={props.className}
+      placeholder={props.placeholder}
     />
   );
 };
