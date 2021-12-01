@@ -6,7 +6,6 @@
   "browser": "build/index.js",
   "types": "build/src/index.d.ts",
   "files": [
-    "build/index.d.ts",
     "build",
     "README.md"
   ],

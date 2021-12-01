@@ -1,12 +1,12 @@
 import React from "react";
 import { Row, Col } from "Components/Grid";
 
-interface IProps {
+export interface FieldProps {
   className?: string;
   children: JSX.Element | JSX.Element[];
 }
 
-const Field: React.FC<IProps> = (props) => {
+const Field: React.FC<FieldProps> = (props) => {
   return (
     <Row>
       <>
