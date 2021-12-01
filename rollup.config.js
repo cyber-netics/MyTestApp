@@ -41,7 +41,7 @@ export default [
   },
   {
     input: "src/Shared/shared.d.ts",
-    output: [{ file: "build/index.d.ts", format: "esm" }],
+    output: [{ file: "build/src/index.d.ts", format: "esm" }],
     plugins: [dts()],
   },
 ];
