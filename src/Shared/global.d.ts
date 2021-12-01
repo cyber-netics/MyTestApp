@@ -21,7 +21,7 @@ declare global {
   }
 
   // Dynamic colors/Sizes
-  interface ElemSizeTypes {
+  export interface ElemSizeTypes {
     size?: ISizeTypes;
   }
 
@@ -45,3 +45,5 @@ declare global {
     colorType?: IStatusColorTypes;
   }
 }
+
+export {};
