@@ -20,9 +20,8 @@
     "jsx": "react",
     "baseUrl": ".",
     "declaration": true,
-    "outDir": "build",
-    "typeRoots": ["src/Shared/index.d.ts"]
+    "outDir": "build"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/Shared/index.d.ts"],
   "exclude": ["node_modules"]
 }

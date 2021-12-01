@@ -36,7 +36,6 @@ export default [
       }),
 
       external({
-        external: "./src/Shared/index.d.ts",
         extensions: [".js", ".json", ".jsx", "ts"],
       }),
       resolve({
