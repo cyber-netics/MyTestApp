@@ -28,11 +28,16 @@ export default [
       typescript({
         tsconfig: "./tsconfig.json",
       }),
+
       commonjs({
         include: ["node_modules/**"],
       }),
+
       external(),
-      resolve(),
+      resolve({
+        extensions: [".js", ".json", ".jsx"],
+      }),
+
       terser(),
       svgr({ babel: false }),
       url({ icon: false }),

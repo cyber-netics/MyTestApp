@@ -46,9 +46,11 @@ const config: webpack.Configuration = {
     new HtmlWebpackPlugin({
       template: Settings.html_template,
     }),
+    
     new webpack.ProvidePlugin({
       React: "react",
     }),
+
     new ForkTsCheckerWebpackPlugin({
       typescript: {
         configFile: path.resolve(__dirname, Settings.ts_config),
