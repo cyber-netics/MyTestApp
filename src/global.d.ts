@@ -1,5 +1,3 @@
-export {};
-
 declare global {
   // Events
   type ButtonEvent = React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>;

@@ -1,3 +1,5 @@
+/// <reference path="./global.d.ts" />
+
 export { default as Button, ButtonProps } from "./Components/Button";
 export { Input, InputEmail, InputNumber, InputProps } from "./Components/Input";
 export { default as Breadcrumb, BreadcrumbProps } from "Components/Breadcrumb";

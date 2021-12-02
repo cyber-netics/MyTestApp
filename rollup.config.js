@@ -49,7 +49,7 @@ export default [
     ],
   },
   {
-    input: "./src/Shared/global.d.ts",
+    input: "./src/global.d.ts",
     output: [{ file: "build/index.d.ts", format: "es" }],
     plugins: [dts()],
   },
