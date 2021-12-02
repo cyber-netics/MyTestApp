@@ -6,8 +6,7 @@
       "Shared/*": ["./src/Shared/*"],
       "Assets/*": ["./src/Assets/*"],
       "Layout": ["./src/Layout"],
-      "theme": ["./src/theme"],
-      "react": "./node_modules/react"
+      "theme": ["./src/theme"]
     }
   }
 }
