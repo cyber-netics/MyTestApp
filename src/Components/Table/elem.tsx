@@ -12,8 +12,8 @@ export const TableElement = styled.table`
 
 export const TableBody = styled.tbody`
   width: 100%;
+  display: block;
   position: relative;
-  display: inline-flex;
   align-items: center;
 `;
 
