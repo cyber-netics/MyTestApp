@@ -1,7 +1,7 @@
 import React from "react";
 import { Contaienr, Wrapper, ThumbnailImage } from "./styles";
 
-interface ThumbnailProps extends ElemColorTypes, ElemSizeTypes {
+export interface ThumbnailProps extends ElemColorTypes, ElemSizeTypes {
   src: string;
   alt: string;
   className?: string;
