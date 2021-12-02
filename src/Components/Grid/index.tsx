@@ -3,7 +3,7 @@ import { ColProps, RowProps } from "./types";
 import { RowGrid, ColGrid } from "./styles";
 
 export const Row: React.FC<RowProps> = (props) => (
-  <RowGrid>
+  <RowGrid className={props.className}>
     <>{props.children}</>
   </RowGrid>
 );

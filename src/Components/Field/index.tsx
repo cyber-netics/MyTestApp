@@ -1,19 +1,22 @@
 import React from "react";
-import { Row, Col } from "Components/Grid";
+import { FieldRow, FieldCol } from "./styles";
 
 export interface FieldProps {
   className?: string;
   children: JSX.Element | JSX.Element[];
 }
 
-const Field: React.FC<FieldProps> = (props) => {
+const Field: React.FC<FieldProps> = (props: {
+  children: JSX.Element | JSX.Element[];
+  className?: string;
+}) => {
   return (
-    <Row>
+    <FieldRow>
       <>
         {!Array.isArray(props.children) && (
-          <Col col={1}>
+          <FieldCol col={1}>
             <>{props.children}</>
-          </Col>
+          </FieldCol>
         )}
       </>
 
@@ -21,18 +24,19 @@ const Field: React.FC<FieldProps> = (props) => {
         {Array.isArray(props.children) &&
           props.children.map((child, index) => {
             if (!Array.isArray(props.children)) return;
+
             return (
-              <Col
+              <FieldCol
                 key={index}
                 className={props.className}
                 col={props.children.length}
               >
                 <>{child}</>
-              </Col>
+              </FieldCol>
             );
           })}
       </>
-    </Row>
+    </FieldRow>
   );
 };
 
