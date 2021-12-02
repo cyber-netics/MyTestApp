@@ -34,7 +34,7 @@ export default [
       }),
 
       external({
-        extensions: [".js", ".json", ".jsx", ".ts"],
+        packageJsonPath: "my/folder/package.json",
       }),
 
       resolve({
