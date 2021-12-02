@@ -18,8 +18,10 @@ export const badgeBase = css`
 `;
 
 export const dot = css`
-  width: calc(100% - 30%);
-  height: calc(100% - 30%);
+  display: grid;
+  align-content: center;
+  width: calc(100% - 25%);
+  height: calc(100% - 25%);
 `;
 
 export const overflow = css`
