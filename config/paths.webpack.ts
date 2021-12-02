@@ -6,6 +6,7 @@ const alias = {
   Assets: path.resolve("src/Assets/"),
   Layout: path.resolve("src/Layout"),
   theme: path.resolve("src/theme"),
+  react: path.resolve("node_modules/react"),
 };
 
 export default alias;
