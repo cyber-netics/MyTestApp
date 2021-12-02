@@ -9,6 +9,7 @@ import packageJson from "./package.json";
 
 export default [
   {
+    external: ["react", "react-dom", "styled-components"],
     input: "src/index.tsx",
     output: [
       {
@@ -34,7 +35,6 @@ export default [
 
       external({
         packageJsonPath: "my/folder/package.json",
-        external: ["react", "react-dom", "styled-components"],
       }),
 
       resolve({
