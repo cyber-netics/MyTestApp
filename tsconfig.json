@@ -19,16 +19,8 @@
     "jsx": "react",
     "baseUrl": ".",
     "declaration": true,
-    "outDir": "build",
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/@types",
-      "./src/@types/index.d.ts"
-    ],
-    "paths": {
-      "exo-ui": ["@types/index.d.ts"]
-    }
+    "outDir": "build"
   },
-  "include": ["src", "src/types/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "build"]
 }
