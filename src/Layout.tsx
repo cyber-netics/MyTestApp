@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { styles, GlobalStyle, defaults } from "theme";
+import { styles, GlobalStyle, defaults } from "./theme";
 
 interface LayoutProps extends ElemColorTypes, ElemSizeTypes {
   children: JSX.Element;
