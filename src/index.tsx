@@ -14,7 +14,6 @@ export { default as Checkbox, CheckboxProps } from "./Components/Checkbox";
 export { default as Select, Option, SelectProps } from "./Components/Select";
 export { default as Thumbnail, ThumbnailProps } from "./Components/Thumbnail";
 export { Input, InputEmail, InputNumber, InputProps } from "./Components/Input";
-
 export {
   default as Breadcrumb,
   BreadcrumbProps,
@@ -24,11 +23,12 @@ export {
 // import ReactDOM from "react-dom";
 // import { BrowserRouter as Router } from "react-router-dom";
 // import Layout from "Layout";
+// import Badge from "Components/Badge";
 
 // ReactDOM.render(
 //   <Layout color="dark">
 //     <Router>
-//       <div></div>
+//       <Badge count={3} size="large" />
 //     </Router>
 //   </Layout>,
 //   document.getElementById("root")

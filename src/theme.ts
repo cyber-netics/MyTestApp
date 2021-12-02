@@ -101,6 +101,11 @@ const theme = {
       medium: "5px 25px",
       large: "6px 30px",
     },
+    secondary: {
+      small: "1px",
+      medium: "2px",
+      large: "3px;",
+    },
   },
 
   font: {

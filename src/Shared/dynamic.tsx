@@ -99,3 +99,10 @@ export const secondaryFontSize = ({
 export const primarySpace = ({ theme, sizeType }: InnerSizeTypes & ITheme) => {
   return theme.spacing.primary[sizeType || theme.sizeType];
 };
+
+export const secondarySpace = ({
+  theme,
+  sizeType,
+}: InnerSizeTypes & ITheme) => {
+  return theme.spacing.secondary[sizeType || theme.sizeType];
+};

@@ -1,5 +1,10 @@
 import styled, { css } from "styled-components";
-import { statusPrimary, sizeSecondary, fontSizeSecondary } from "Shared/styles";
+import {
+  statusPrimary,
+  sizeSecondary,
+  fontSizePrimary,
+  paddingSecondary,
+} from "Shared/styles";
 import { wrapper, badgeBase, overflow, circle, dot } from "./elem";
 
 export type IShapeTypes = "dot" | "circle" | "overflow";
@@ -22,6 +27,8 @@ export const Wrapper = styled.span<InnerSizeTypes>`
 export const BadgeElem = styled.span<InnerProps>`
   ${badgeBase};
   ${dynamicShape};
+  ${sizeSecondary};
   ${statusPrimary};
-  ${fontSizeSecondary};
+  ${fontSizePrimary};
+  ${paddingSecondary};
 `;
