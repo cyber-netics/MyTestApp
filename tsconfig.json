@@ -19,7 +19,8 @@
     "rootDir": ".",
     "baseUrl": ".",
     "declaration": true,
-    "outDir": "build"
+    "outDir": "build",
+    "rootDirs": ["node_modules/@types"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build"]
