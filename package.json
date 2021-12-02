@@ -9,6 +9,9 @@
     "build",
     "README.md"
   ],
+  "resolutions": {
+    "react": "^17.0.2"
+  },
   "scripts": {
     "dev": "cross-env TS_NODE_PROJECT=\"./config/webpack.tsconfig.json\" webpack s --config ./webpack.config.dev.ts",
     "rollup": "rollup -c --prod --mini",
