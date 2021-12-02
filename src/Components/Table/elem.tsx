@@ -13,6 +13,8 @@ export const TableElement = styled.table`
 export const TableBody = styled.tbody`
   width: 100%;
   position: relative;
+  display: inline-flex;
+  align-items: center;
 `;
 
 export const DescribleItem = styled.th`
@@ -23,7 +25,7 @@ export const DescribleItem = styled.th`
   font-weight: normal;
 `;
 
-export const RowTable = styled.tr`
+export const TableRow = styled.tr`
   padding-top: 1.5em;
   padding-bottom: 1.5em;
 `;

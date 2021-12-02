@@ -6,7 +6,13 @@ export const loading = css`
 
 export const button = css`
   border-width: 0;
+  text-align: center;
   border-radius: 2px;
-  position: relative !important;
   transition: all 0.3s;
+  position: relative !important;
+`;
+
+export const buttonText = css`
+  font-weight: 600;
+  justify-content: center;
 `;

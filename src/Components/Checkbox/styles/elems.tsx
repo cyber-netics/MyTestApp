@@ -71,5 +71,5 @@ export const input = css`
 
 export const labelText = css`
   color: #757575;
-  margin-left: 25px;
+  margin-left: 30px;
 `;

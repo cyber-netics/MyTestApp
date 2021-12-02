@@ -4,7 +4,7 @@ export { default as Layout } from "./Layout";
 export * from "./Components/Grid";
 export * from "./Components/Input";
 export * from "./Components/Divider";
-export { default as Table, TableProps } from "./Components/Table";
+export * from "./Components/Table";
 export { default as Field, FieldProps } from "./Components/Field";
 export { default as Badge, BadgeProps } from "./Components/Badge";
 export { default as Radio, RadioProps } from "./Components/Radio";
@@ -22,18 +22,12 @@ export {
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import { BrowserRouter as Router } from "react-router-dom";
-
-// import Layout from "./Layout";
-// import Field from "Components/Field";
-// import { Input } from "Components/Input";
+// import Layout from "Layout";
 
 // ReactDOM.render(
 //   <Layout color="dark">
 //     <Router>
-//       <Field>
-//         <Input placeholder="firstname" />
-//         <Input placeholder="lastName" />
-//       </Field>
+//       <div></div>
 //     </Router>
 //   </Layout>,
 //   document.getElementById("root")

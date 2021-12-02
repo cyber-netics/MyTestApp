@@ -1,18 +1,28 @@
 import React from "react";
-import { TableElement, TableBody, RowTable, Content } from "./elem";
+import { TableElement, TableBody, TableRow, Content } from "./elem";
 
 export interface TableProps {
-  children?: JSX.Element;
+  children: JSX.Element[];
 }
 
 const Table: React.FC<TableProps> = (props) => (
   <TableElement>
     <TableBody>
-      <RowTable>
+      <TableRow>
         <Content>
-          <>{props.children}</>
+          <>{props.children[0]}</>
         </Content>
-      </RowTable>
+      </TableRow>
+      <TableRow>
+        <Content>
+          <>{props.children[1]}</>
+        </Content>
+      </TableRow>
+      <TableRow>
+        <Content>
+          <>{props.children[2]}</>
+        </Content>
+      </TableRow>
     </TableBody>
   </TableElement>
 );

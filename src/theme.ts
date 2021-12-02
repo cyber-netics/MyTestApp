@@ -105,7 +105,7 @@ const theme = {
 
   font: {
     primary: {
-      small: "13.5px",
+      small: "13.425px",
       medium: "14.5px",
       large: "15.5px",
     },

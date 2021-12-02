@@ -14,5 +14,5 @@ export const base = css`
   list-style: none;
   box-sizing: border-box;
   width: 100%;
-  padding: 13.5px;
+  padding: 13.425px;
 `;

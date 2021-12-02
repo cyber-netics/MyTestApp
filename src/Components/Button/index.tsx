@@ -3,6 +3,7 @@ import { Row } from "Components/Grid";
 import { ButtonElem, LoadingAnim } from "./styles";
 
 export interface ButtonProps extends ElemSizeTypes, ElemColorTypes {
+  radius?: number;
   loading?: boolean;
   disabled?: boolean;
   className?: string;
@@ -40,6 +41,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     <ButtonElem
       focus={focus}
       onClick={onClick}
+      radius={props.radius}
       sizeType={props.size}
       colorType={props.color}
       disabled={props.disabled}

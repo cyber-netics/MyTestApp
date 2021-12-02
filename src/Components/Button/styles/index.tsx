@@ -1,5 +1,6 @@
-import styled, { css } from "styled-components";
-import { button, loading } from "./styles";
+import styled from "styled-components";
+import { button, buttonText, loading } from "./styles";
+import { borderRadius } from "Shared/styles";
 
 import { Loading } from "Components/Animation/Loading";
 import { waveOnFocus } from "Components/Animation/Wave";
@@ -15,20 +16,26 @@ import {
 
 interface ButtonElemProps extends InnerColorTypes, InnerSizeTypes {
   focus?: boolean;
+  radius?: number;
 }
 
 export const ButtonElem = styled.button<ButtonElemProps>`
   ${button};
   ${waveOnFocus};
   ${hightPrimary};
+  ${borderRadius};
   ${paddingPrimary};
-  ${fontSizePrimary};
-  ${fontColorPrimary};
   ${backgroundPrimary};
 
   &:hover {
     ${backgroundSecondary};
   }
+`;
+
+export const ButtonText = styled.span`
+  ${buttonText};
+  ${fontSizePrimary};
+  ${fontColorPrimary};
 `;
 
 export const LoadingAnim = styled(Loading)<InnerSizeTypes>`
