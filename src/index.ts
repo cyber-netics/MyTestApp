@@ -12,7 +12,7 @@ export { default as Badge } from "./Components/Badge";
 export { default as Checkbox } from "./Components/Checkbox";
 export { default as Radio } from "./Components/Radio";
 export { default as Select, Option } from "./Components/Select";
-export { default as Thumbnail } from "Components/Thumbnail";
+export { default as Thumbnail } from "./Components/Thumbnail";
 
 export * from "./Components/Grid";
 export * from "./Components/Input";
