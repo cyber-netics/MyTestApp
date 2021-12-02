@@ -7,24 +7,9 @@ export interface TableProps {
 
 const Table: React.FC<TableProps> = (props) => (
   <TableElement>
-    <TableBody>
-      <TableRow>
-        <Content>
-          <>{props.children[0]}</>
-        </Content>
-      </TableRow>
-      <TableRow>
-        <Content>
-          <>{props.children[1]}</>
-        </Content>
-      </TableRow>
-      <TableRow>
-        <Content>
-          <>{props.children[2]}</>
-        </Content>
-      </TableRow>
-    </TableBody>
+    <TableBody>{props.children}</TableBody>
   </TableElement>
 );
 
+export { TableRow, Content };
 export default Table;
