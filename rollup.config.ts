@@ -47,9 +47,5 @@ export default [
       url(),
     ],
   },
-  {
-    input: "./src/global.d.ts",
-    output: [{ file: "./build/src/global.d.ts", format: "es" }],
-    plugins: [dts()],
-  },
+
 ];
