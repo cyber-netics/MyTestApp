@@ -20,8 +20,8 @@
     "baseUrl": ".",
     "declaration": true,
     "outDir": "build",
-    "declarationDir": "./src/types"
+    "types": ["./src/types"]
   },
-  "include": ["src"],
+  "include": ["src", "src/types/**/*"],
   "exclude": ["node_modules", "build"]
 }

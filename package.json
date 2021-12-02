@@ -4,7 +4,7 @@
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
   "browser": "build/index.js",
-  "types": "build/index.d.ts",
+  "types": "build/src/index.d.ts",
   "files": [
     "build",
     "README.md"
