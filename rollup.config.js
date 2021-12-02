@@ -49,7 +49,7 @@ export default [
     ],
   },
   {
-    input: "./src/global.d.ts",
+    input: "./src/types/index.d.ts",
     output: [{ file: "build/src/global.d.ts", format: "esm" }],
     plugins: [dts()],
   },
