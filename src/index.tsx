@@ -3,6 +3,7 @@ export { default as Layout } from "./Layout";
 
 export * from "./Components/Grid";
 export * from "./Components/Input";
+export * from "./Components/Divider";
 export { default as Tabe, TableProps } from "./Components/Table";
 export { default as Field, FieldProps } from "./Components/Field";
 export { default as Badge, BadgeProps } from "./Components/Badge";
