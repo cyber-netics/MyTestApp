@@ -25,6 +25,7 @@ export default [
         sourcemap: true,
       },
     ],
+
     plugins: [
       typescript({
         tsconfig: "./tsconfig.json",
@@ -43,12 +44,12 @@ export default [
 
       terser(),
       svgr({ babel: false }),
-      url({ icon: false }),
+      url(),
     ],
   },
   {
-    input: "./src/index.d.ts",
-    output: [{ file: "./build/index.d.ts", format: "esm" }],
+    input: "./src/global.d.ts",
+    output: [{ file: "./build/src/global.d.ts", format: "es" }],
     plugins: [dts()],
   },
 ];

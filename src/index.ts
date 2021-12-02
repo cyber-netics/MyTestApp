@@ -1,4 +1,4 @@
-/// <reference types="./index" />
+/// <reference types="./global" />
 
 export { default as Button, ButtonProps } from "./Components/Button";
 export { Input, InputEmail, InputNumber, InputProps } from "./Components/Input";

@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev": "cross-env TS_NODE_PROJECT=\"./config/webpack.tsconfig.json\" webpack s --config ./webpack.config.dev.ts",
-    "rollup": "rollup -c",
+    "rollup": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
     "build": "npm run rollup",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
