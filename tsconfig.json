@@ -19,9 +19,9 @@
     "jsx": "react",
     "baseUrl": ".",
     "declaration": true,
-    "outDir": "build"
+    "outDir": "build",
+    "typeRoots": ["src/global.ts"]
   },
-  "files": ["src/global.ts"],
   "include": ["src/**/*", "src/global.ts"],
   "exclude": ["node_modules", "build"]
 }
