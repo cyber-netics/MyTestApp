@@ -18,6 +18,7 @@ const Badge: React.FC<BadgeProps> = (props) => {
       >
         <>{props.count && props.shape !== "dot" && props.count}</>
       </BadgeElem>
+      {props.children}
     </Wrapper>
   );
 };
