@@ -15,13 +15,12 @@
     "isolatedModules": false,
     "noEmit": true,
     "sourceMap": true,
-    "rootDir": ".",
     "jsx": "react",
+    "rootDir": ".",
     "baseUrl": ".",
     "declaration": true,
-    "outDir": "build",
-    "typeRoots": ["src/types/global.ts"]
+    "outDir": "build"
   },
-  "include": ["src/**/*", "src/types/global.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "build"]
 }
