@@ -5,6 +5,7 @@ import external from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
 import svgr from "@svgr/rollup";
 import url from "@rollup/plugin-url";
+import dts from "rollup-plugin-dts";
 const packageJson = require("./package.json");
 
 export default [
@@ -44,5 +45,10 @@ export default [
       svgr({ babel: false }),
       url({ icon: false }),
     ],
+  },
+  {
+    input: "./src/@types/index.d.ts",
+    output: [{ file: "./build/index.d.ts", format: "esm" }],
+    plugins: [dts()],
   },
 ];
