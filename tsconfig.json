@@ -20,8 +20,8 @@
     "baseUrl": ".",
     "declaration": true,
     "outDir": "build",
-    "typeRoots": ["src/global.ts"]
+    "typeRoots": ["src/types/global.ts"]
   },
-  "include": ["src/**/*", "src/global.ts"],
+  "include": ["src/**/*", "src/types/global.ts"],
   "exclude": ["node_modules", "build"]
 }
