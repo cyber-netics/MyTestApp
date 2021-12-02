@@ -14,6 +14,7 @@ export const select = css`
   border-style: solid;
   color: #000000d9;
 
+  padding: 13.5px;
   padding-left: 15px;
   padding-right: 0;
 `;

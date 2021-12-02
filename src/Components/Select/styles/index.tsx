@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { select, wrapper, arrow, caret } from "./elem";
 import {
   hightPrimary,
-  paddingPrimary,
   borderDefault,
   borderPrimary,
   shadowPrimary,
@@ -24,10 +23,9 @@ export const Caret = styled.div`
 export const SelectElem = styled.select<InnerSizeTypes & InnerColorTypes>`
   ${select};
   ${hightPrimary};
-  ${paddingPrimary};
   ${borderDefault};
   &:hover {
-    ${borderPrimary};
+    ${borderPrimary};∂
   }
   &:focus {
     ${borderPrimary};
