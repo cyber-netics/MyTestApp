@@ -10,6 +10,7 @@ import babel from "@rollup/plugin-babel";
 
 export default [
   {
+    external: ["react", "react-dom", "styled-components"],
     input: "src/index.tsx",
     output: [
       {
@@ -24,18 +25,6 @@ export default [
         sourcemap: true,
       },
     ],
-    onwarn: function (warning, warner) {
-      // if circular dependency warning
-      if (warning.code === "CIRCULAR_DEPENDENCY") {
-        // if comming from a third-party
-        if (warning.importer && warning.importer.startsWith("node_modules/")) {
-          // ignore warning
-          return;
-        }
-      }
-      // Use default for everything else
-      warner(warning);
-    },
     plugins: [
       babel({
         exclude: "node_modules/**",
@@ -52,6 +41,7 @@ export default [
 
       external({
         packageJsonPath: "my/folder/package.json",
+        external: ["react", "react-dom", "styled-components"],
       }),
 
       resolve({
