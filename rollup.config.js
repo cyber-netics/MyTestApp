@@ -50,7 +50,7 @@ export default [
   },
   {
     input: "./src/types/index.d.ts",
-    output: [{ file: packageJson.typings, format: "esm" }],
+    output: [{ file:'./build/index.d.ts', format: "esm" }],
     plugins: [dts()],
   },
 ];
