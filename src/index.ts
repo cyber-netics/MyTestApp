@@ -1,4 +1,5 @@
 export * from "./@types/global";
+export { default as Layout } from "./Layout";
 
 export { default as Button, ButtonProps } from "./Components/Button";
 export { Input, InputEmail, InputNumber, InputProps } from "./Components/Input";

@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-modules-1${{ hashFiles('package-lock.json') }}
+          key: node-modules-1${{ hashFiles('package.json') }}
 
       - name: Install
         run: |
@@ -47,7 +47,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-modules-1${{ hashFiles('package-lock.json') }}
+          key: node-modules-1${{ hashFiles('package.json') }}
 
       - name: Cache Cypress Binary
         id: cache-cypress-binary
@@ -82,7 +82,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: node-modules-1${{ hashFiles('package-lock.json') }}
+          key: node-modules-1${{ hashFiles('package.json') }}
 
       - name: Cache Cypress Binary
         id: cache-cypress-binary

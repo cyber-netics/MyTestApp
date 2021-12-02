@@ -34,9 +34,12 @@ const App = () => (
 And set up layout styles manually:
 
 ```js
-<Layout color="dark">
-  <Button>Click me</Button>
-<Layout>
+export { Layout } from "exo-ui";
 
+const App = () => (
+  <Layout>
+    <Button color="primary">Click me</Button>
+  </Layout>
+);
 ```
 
