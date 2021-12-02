@@ -1,3 +1,4 @@
+export * from "./global";
 
 export { default as Button, ButtonProps } from "./Components/Button";
 export { Input, InputEmail, InputNumber, InputProps } from "./Components/Input";

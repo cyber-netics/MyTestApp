@@ -21,6 +21,7 @@
     "declaration": true,
     "outDir": "build"
   },
+  "files": ["src/global.ts"],
   "include": ["src/**/*", "src/global.ts"],
   "exclude": ["node_modules", "build"]
 }

@@ -18,8 +18,7 @@ declare global {
     color?: IDarkLightColorTypes;
   }
 
-  // Dynamic colors/Sizes
-  export interface ElemSizeTypes {
+  interface ElemSizeTypes {
     size?: ISizeTypes;
   }
 
