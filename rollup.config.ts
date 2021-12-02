@@ -10,7 +10,6 @@ import packageJson from "./package.json";
 export default [
   {
     input: "src/index.ts",
-    external: ["react", "react-dom", "styled-components"],
     output: [
       {
         file: packageJson.main,
@@ -36,7 +35,6 @@ export default [
 
       external({
         extensions: [".js", ".json", ".jsx", ".ts"],
-        external: ["react", "react-dom", "styled-components"],
       }),
 
       resolve({
