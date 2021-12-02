@@ -1,17 +1,22 @@
 import React from "react";
 import { mount } from "@cypress/react";
 
+import { styles as theme } from "theme";
+import Layout from "Layout";
+
 import Badge, { BadgeProps } from "Components/Badge";
+import { sizeList, statusList, shapeList } from "../helpers";
+
 import {
   secondaryHeight,
   secondaryFontSize,
   primaryStatusColors,
 } from "Shared/dynamic";
 
-import { sizeList, statusList, shapeList } from "../helpers";
-
 const Element: React.FC<BadgeProps> = (props) => (
-  <Badge className="badge-element" {...props} />
+  <Layout>
+    <Badge className="badge-element" {...props} />
+  </Layout>
 );
 
 describe("Dynamic Sizes", () => {
@@ -21,7 +26,7 @@ describe("Dynamic Sizes", () => {
         sizeList.forEach((sizeType) => {
           it(sizeType, () => {
             mount(<Element shape={shapeType} size={sizeType} />);
-            const size = secondaryHeight({ sizeType });
+            const size = secondaryHeight({ theme, sizeType });
             const elem = cy.get(".badge-element");
 
             elem.should("have.css", "height", size);
@@ -39,7 +44,7 @@ describe("Dynamic Sizes", () => {
         sizeList.forEach((sizeType) => {
           it(sizeType, () => {
             mount(<Element shape={shapeType} size={sizeType} />);
-            const size = secondaryFontSize({ sizeType });
+            const size = secondaryFontSize({ theme, sizeType });
             const elem = cy.get(".badge-element").children();
 
             elem.should("have.css", "font-size", size);
@@ -58,7 +63,7 @@ describe("Dynamic Colors", () => {
         statusList.forEach((colorType) => {
           it(colorType, () => {
             mount(<Element color={colorType} />);
-            const color = primaryStatusColors({ colorType });
+            const color = primaryStatusColors({ theme, colorType });
 
             cy.get(".badge-element")
               .children()

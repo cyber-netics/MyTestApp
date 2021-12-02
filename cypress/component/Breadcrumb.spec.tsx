@@ -1,14 +1,19 @@
 import React from "react";
 import { mount } from "@cypress/react";
+
+import { styles as theme } from "theme";
+import Layout from "Layout";
+
+import { sizeList, steps } from "../helpers";
 import { secondaryFontColors, secondaryFontSize } from "Shared/dynamic";
 import Breadcrumb, { BreadcrumbProps } from "Components/Breadcrumb";
 
-import { sizeList, steps } from "../helpers";
-
 const Element: React.FC<BreadcrumbProps> = (props) => (
-  <Breadcrumb className="breadcrumb-element" {...props}>
-    {props.children}
-  </Breadcrumb>
+  <Layout>
+    <Breadcrumb className="breadcrumb-element" {...props}>
+      {props.children}
+    </Breadcrumb>
+  </Layout>
 );
 
 describe("Font Color", () => {
@@ -16,7 +21,7 @@ describe("Font Color", () => {
     steps.forEach((step, index) => {
       mount(<Element steps={steps} active={index} />);
 
-      const activeColor = secondaryFontColors({ colorType: "dark" });
+      const activeColor = secondaryFontColors({ theme, colorType: "dark" });
       cy.get(".breadcrumb-element")
         .find("li")
         .eq(index)
@@ -29,7 +34,10 @@ describe("Font Color", () => {
     steps.forEach((step, index) => {
       mount(<Element steps={steps} active={index} />);
 
-      const inactiveColor = secondaryFontColors({ colorType: "primary" });
+      const inactiveColor = secondaryFontColors({
+        theme,
+        colorType: "primary",
+      });
       cy.get(".breadcrumb-element>li")
         .eq(index - 1)
         .find("a")
@@ -42,7 +50,7 @@ describe("Font Size", () => {
   sizeList.forEach((sizeType) => {
     it(sizeType, () => {
       mount(<Element steps={steps} size={sizeType} />);
-      const size = secondaryFontSize({ sizeType });
+      const size = secondaryFontSize({ theme, sizeType });
 
       cy.get(".breadcrumb-element>li")
         .find("a")

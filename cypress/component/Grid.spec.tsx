@@ -1,34 +1,38 @@
 import React from "react";
 import { mount } from "@cypress/react";
-import { Row, Col } from "Components/Grid";
+
 import "../helpers/base.css";
+import Layout from "Layout";
+import { Row, Col } from "Components/Grid";
 
 const Element: React.FC<{ col: number }> = (props) => {
   return (
-    <div style={{ width: "100%", margin: "0", padding: 0 }}>
-      <Row>
-        <Col className="column" sm={props.col}>
-          <div
-            style={{
-              height: "15px",
-              backgroundColor: "red",
-            }}
-          ></div>
-        </Col>
-        <>
-          {props.col > 1 && (
-            <Col className="column" sm={props.col}>
-              <div
-                style={{
-                  height: "15px",
-                  backgroundColor: "red",
-                }}
-              ></div>
-            </Col>
-          )}
-        </>
-      </Row>
-    </div>
+    <Layout>
+      <div style={{ width: "100%", margin: "0", padding: 0 }}>
+        <Row>
+          <Col className="column" sm={props.col}>
+            <div
+              style={{
+                height: "15px",
+                backgroundColor: "red",
+              }}
+            ></div>
+          </Col>
+          <>
+            {props.col > 1 && (
+              <Col className="column" sm={props.col}>
+                <div
+                  style={{
+                    height: "15px",
+                    backgroundColor: "red",
+                  }}
+                ></div>
+              </Col>
+            )}
+          </>
+        </Row>
+      </div>
+    </Layout>
   );
 };
 

@@ -1,20 +1,23 @@
 import React from "react";
 import { mount } from "@cypress/react";
-import Radio, { RadioProps } from "Components/Radio";
+
+import { styles as theme } from "theme";
+import Layout from "Layout";
 import { sizeList, colorList } from "../helpers";
-import { colors } from "Shared/theme";
+import Radio, { RadioProps } from "Components/Radio";
 
 import {
   primaryColors,
   secondaryHeight,
   primaryFontSize,
-  secondaryColors,
 } from "Shared/dynamic";
 
 const Element: React.FC<RadioProps> = (props) => (
-  <Radio className="radio-element" {...props}>
-    <>{props.children}</>
-  </Radio>
+  <Layout>
+    <Radio className="radio-element" {...props}>
+      <>{props.children}</>
+    </Radio>
+  </Layout>
 );
 
 const sizeTests = [
@@ -26,7 +29,7 @@ describe("Dynamic Colors", () => {
   colorList.forEach((colorType) => {
     it(colorType, () => {
       mount(<Element color={colorType} />);
-      const color = primaryColors({ colorType });
+      const color = primaryColors({ theme, colorType });
 
       cy.get(".radio-element").click();
       cy.get(".radio-element")
@@ -43,7 +46,7 @@ describe("Dynamic Sizes", () => {
       sizeList.forEach((sizeType) => {
         it(sizeType, () => {
           mount(<Element size={sizeType}>Submit</Element>);
-          const size = des.mock({ sizeType });
+          const size = des.mock({ theme, sizeType });
 
           cy.get(".radio-element").should("have.css", des.css, size);
           cy.log(`Size: ${sizeType} - ${size}`);
@@ -58,7 +61,7 @@ describe("Interactive", { browser: "chrome" || "edge" }, () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {
         mount(<Element color={colorType} />);
-        const color = primaryColors({ colorType });
+        const color = primaryColors({ theme, colorType });
 
         cy.get(".radio-element")
           .click()

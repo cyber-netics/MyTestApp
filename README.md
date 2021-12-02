@@ -31,4 +31,12 @@ const App = () => (
   </>
 );
 ```
+And set up layout styles manually:
+
+```js
+<Layout color="dark">
+  <Button>Click me</Button>
+<Layout>
+
+```
 

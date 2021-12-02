@@ -1,12 +1,17 @@
 import React from "react";
 import { mount } from "@cypress/react";
 
-import { primaryHighlight } from "Shared/dynamic";
+import { styles as theme } from "theme";
+import Layout from "Layout";
+
 import { darkLightColors } from "../helpers";
+import { primaryHighlight } from "Shared/dynamic";
 import Dropdown from "Components/Dropdown";
 
 const Element: React.FC<ElemDarkLightColorTypes> = (props) => (
-  <Dropdown header="hello" className="drop-element" color={props.color} />
+  <Layout>
+    <Dropdown header="hello" className="drop-element" color={props.color} />
+  </Layout>
 );
 
 describe("Open / Close", () => {
@@ -29,7 +34,7 @@ describe("Dynamic Color", () => {
     it(colorType, () => {
       mount(<Element color={colorType} />);
 
-      const color = primaryHighlight({ colorType });
+      const color = primaryHighlight({ theme, colorType });
       cy.get(".drop-header").should("have.css", "background-color", color);
     });
   });

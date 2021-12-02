@@ -1,3 +1,10 @@
+import { createGlobalStyle } from "styled-components";
+
+/**
+ *
+ * Colors
+ *
+ */
 export const colors = {
   dark: "rgb(0, 0, 0)",
   dark1: "rgb(48, 48, 48)",
@@ -17,11 +24,11 @@ export const colors = {
   success: "rgb(82, 196, 26)",
   error: "rgb(255, 77, 79)",
   error1: "rgba(255, 77, 79, 0.3)",
-  noColor: 'rgba(0, 0, 0, 0)',
+  noColor: "rgba(0, 0, 0, 0)",
   light: "rgb(255, 255, 255)",
 };
 
-export const theme = {
+const theme = {
   colors: {
     primary: {
       dark: colors.dark,
@@ -109,3 +116,54 @@ export const theme = {
     },
   },
 };
+
+/**
+ *
+ * Config
+ */
+type IStyleType = {
+  sizeType: ISizeTypes;
+  colorType: IColorTypes;
+};
+
+type ThemeProps = typeof theme & IStyleType;
+
+export interface ITheme {
+  theme: ThemeProps;
+}
+
+export const defaults: IStyleType = {
+  sizeType: "small",
+  colorType: "primary",
+};
+
+export const styles: ThemeProps = Object.assign({}, { ...theme, ...defaults });
+
+/**
+ *
+ * Global Style
+ */
+export const GlobalStyle = createGlobalStyle`
+  html {
+    height: 100%;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica, Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol", sans-serif;
+  }
+
+  body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .fade {
+    transition: all 1s ease-out;
+  }
+`;

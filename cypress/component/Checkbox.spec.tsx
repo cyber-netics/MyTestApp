@@ -1,8 +1,11 @@
 import React from "react";
 import { mount } from "@cypress/react";
-import Checkbox, { CheckboxProps } from "Components/Checkbox";
+
+import { colors, styles as theme } from "theme";
+import Layout from "Layout";
+
 import { sizeList, colorList } from "../helpers";
-import { colors } from "Shared/theme";
+import Checkbox, { CheckboxProps } from "Components/Checkbox";
 
 import {
   secondaryHeight,
@@ -12,9 +15,11 @@ import {
 } from "Shared/dynamic";
 
 const Element: React.FC<CheckboxProps> = (props) => (
-  <Checkbox className="checkbox-element" {...props}>
-    {props.children}
-  </Checkbox>
+  <Layout>
+    <Checkbox className="checkbox-element" {...props}>
+      {props.children}
+    </Checkbox>
+  </Layout>
 );
 
 const sizes = [
@@ -40,7 +45,7 @@ describe("Dynamic Colors", () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {
         mount(<Element color={colorType}>Submit</Element>);
-        const color = primaryColors({ colorType });
+        const color = primaryColors({ theme, colorType });
 
         cy.get(".checkbox-element")
           .click()
@@ -56,7 +61,7 @@ describe("Dynamic Sizes", () => {
       sizeList.forEach((sizeType) => {
         it(sizeType, () => {
           mount(<Element size={sizeType}>Submit</Element>);
-          const size = des.mock({ sizeType });
+          const size = des.mock({ theme, sizeType });
 
           cy.get(".checkbox-element").should("have.css", des.css, size);
           cy.log(`Size: ${sizeType} - ${size}`);
@@ -70,7 +75,7 @@ describe("Wave Animation", { browser: "chrome" || "edge" }, () => {
   colorList.forEach((colorType) => {
     it(colorType, () => {
       mount(<Element color={colorType}>Submit</Element>);
-      const color = secondaryColors({ colorType });
+      const color = secondaryColors({ theme, colorType });
 
       cy.get(".checkbox-element")
         .click()
@@ -89,7 +94,7 @@ describe("Interactive Colors", { browser: "chrome" || "edge" }, () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {
         mount(<Element color={colorType}>Submit</Element>);
-        const color = primaryColors({ colorType });
+        const color = primaryColors({ theme, colorType });
 
         cy.get(".checkbox-element")
           .click()
@@ -105,7 +110,7 @@ describe("Interactive Colors", { browser: "chrome" || "edge" }, () => {
     colorList.forEach((colorType) => {
       it(colorType, () => {
         mount(<Element color={colorType}>Submit</Element>);
-        const color = primaryColors({ colorType });
+        const color = primaryColors({ theme, colorType });
 
         cy.get(".checkbox-element").children().invoke("mouseover").onHover();
         cy.get(".checkbox-element").should("have.css", "border-color", color);

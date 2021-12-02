@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "include": ["./**/*.tsx", "./**/*.ts", "plugins/browsers.js"],
   "exclude": [],
-  "files": ["../src/Shared/index.d.ts"],
+  "files": ["../src/@yptes/index.d.ts"],
   "compilerOptions": {
     "types": ["node", "cypress"],
     "lib": ["es2016", "dom"],

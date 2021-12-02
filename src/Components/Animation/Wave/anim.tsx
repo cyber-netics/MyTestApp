@@ -1,5 +1,6 @@
 import { css, keyframes } from "styled-components";
-import { colors } from "Shared/theme";
+import { colors } from "theme";
+import { ITheme } from "theme";
 
 export const fadeEffect = keyframes`
     to {
@@ -21,11 +22,11 @@ const waveEffectDark = keyframes`
     }
 `;
 
-const animColors = ({ colorType = "primary" }: InnerColorTypes) => {
+const animColors = ({ theme, colorType }: InnerColorTypes & ITheme) => {
   return {
     dark: waveEffectDark,
     primary: waveEffectPrimary,
-  }[colorType];
+  }[colorType || theme.colorType];
 };
 
 export const waveAnim = css<InnerColorTypes>`

@@ -1,29 +1,33 @@
 import React from "react";
 import { mount } from "@cypress/react";
-import Field from "Components/Field";
+
 import "../helpers/base.css";
+import Layout from "Layout";
+import Field from "Components/Field";
 
 interface ElemProps {
   className?: string;
 }
 const Elem: React.FC<ElemProps> = (props) => {
   return (
-    <div
-      {...props}
-      style={{
-        height: "15px",
-        minWidth: "15px",
-        background: "red",
-      }}
-    >
+    <Layout>
       <div
+        {...props}
         style={{
-          border: "1px solid #fff",
           height: "15px",
           minWidth: "15px",
+          background: "red",
         }}
-      ></div>
-    </div>
+      >
+        <div
+          style={{
+            border: "1px solid #fff",
+            height: "15px",
+            minWidth: "15px",
+          }}
+        ></div>
+      </div>
+    </Layout>
   );
 };
 

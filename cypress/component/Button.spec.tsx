@@ -1,6 +1,9 @@
 import React from "react";
 import { mount } from "@cypress/react";
 
+import { styles as theme } from "theme";
+import Layout from "Layout";
+
 import { sizeList, colorList, clicks } from "../helpers";
 import Button, { ButtonProps } from "Components/Button";
 
@@ -14,9 +17,11 @@ import {
 } from "Shared/dynamic";
 
 const Element: React.FC<ButtonProps> = (props) => (
-  <Button className="btn-element" {...props}>
-    {props.children}
-  </Button>
+  <Layout>
+    <Button className="btn-element" {...props}>
+      {props.children}
+    </Button>
+  </Layout>
 );
 
 const sizes = [
@@ -57,7 +62,7 @@ describe("Interactive", () => {
       colorList.forEach((colorType) => {
         it(colorType, () => {
           mount(<Element color={colorType}>Submit</Element>);
-          const color = secondaryColors({ colorType });
+          const color = secondaryColors({ theme, colorType });
 
           cy.get(".btn-element")
             .click()
@@ -77,7 +82,7 @@ describe("Dynamic Sizes", () => {
       sizeList.forEach((sizeType) => {
         it(sizeType, () => {
           mount(<Element size={sizeType}>Submit</Element>);
-          const size = des.mock({ sizeType });
+          const size = des.mock({ theme, sizeType });
 
           cy.get(".btn-element").should("have.css", des.css, size);
           cy.log(`Size: ${sizeType} - ${size}`);
@@ -93,7 +98,7 @@ describe("Dynamic Colors", () => {
       colorList.forEach((colorType) => {
         it(colorType, () => {
           mount(<Element color={colorType}>Submit</Element>);
-          const color = des.mock({ colorType });
+          const color = des.mock({ theme, colorType });
 
           cy.get(".btn-element").should("have.css", des.css, color);
           cy.log(`Color: ${colorType} - ${color}`);

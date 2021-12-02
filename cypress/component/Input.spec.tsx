@@ -1,33 +1,37 @@
 import React from "react";
 import { mount } from "@cypress/react";
-import { colors } from "Shared/theme";
-import { primaryColors, primaryShadow, primaryHeight } from "Shared/dynamic";
-import { Input, InputEmail, InputNumber, InputProps } from "Components/Input";
 
 import { colorList, sizeList } from "../helpers";
+import { colors, styles as theme } from "theme";
+import Layout from "Layout";
+
+import { primaryColors, primaryShadow, primaryHeight } from "Shared/dynamic";
+import { Input, InputEmail, InputNumber, InputProps } from "Components/Input";
 
 type InputTypes = "input" | "email" | "number";
 interface InputCustomProps extends InputProps {
   inputType?: InputTypes;
 }
 
-const Element: React.FC<InputCustomProps> = (props) => {
-  if (props.inputType === "number")
-    return <InputNumber className="input-element" {...props} />;
-
-  if (props.inputType === "email")
-    return <InputEmail className="input-element" {...props} />;
-  else return <Input className="input-element" {...props} />;
+const InputElement: React.FC<InputCustomProps> = (props) => {
+  if (props.inputType === "number") return <InputNumber {...props} />;
+  if (props.inputType === "email") return <InputEmail {...props} />;
+  else return <Input {...props} />;
 };
 
-const sizeTests = [{ name: "Height", css: "min-height", mock: primaryHeight }];
+const Element: React.FC<InputCustomProps> = (props) => (
+  <Layout>
+    <InputElement className="input-element" {...props} />
+  </Layout>
+);
+
 const inputTypes: InputTypes[] = ["input", "email", "number"];
+const sizeTests = [{ name: "Height", css: "min-height", mock: primaryHeight }];
 
 /**
  *
  *
  */
-
 describe("Dynamic Sizes", () => {
   inputTypes.forEach((inputType) => {
     describe(inputType, () => {
@@ -40,7 +44,7 @@ describe("Dynamic Sizes", () => {
                   Submit
                 </Element>
               );
-              const size = des.mock({ sizeType });
+              const size = des.mock({ theme, sizeType });
 
               cy.get(".input-element").should("have.css", des.css, size);
               cy.log(`Size: ${sizeType} - ${size}`);
@@ -59,7 +63,7 @@ describe("Dynamic Colors", () => {
         describe(colorType, () => {
           it("focus border", () => {
             mount(<Element color={colorType} inputType={inputType} />);
-            const borderColor = primaryColors({ colorType });
+            const borderColor = primaryColors({ theme, colorType });
             cy.get(".input-element")
               .focus()
               .borderColor("have.css", borderColor);
@@ -67,7 +71,7 @@ describe("Dynamic Colors", () => {
 
           it("focus shadow", () => {
             mount(<Element color={colorType} inputType={inputType} />);
-            const shadowColor = primaryShadow({ colorType });
+            const shadowColor = primaryShadow({ theme, colorType });
             cy.get(".input-element")
               .noTransition()
               .focus()
@@ -78,7 +82,7 @@ describe("Dynamic Colors", () => {
 
           it("hover border", () => {
             mount(<Element color={colorType} inputType={inputType} />);
-            const color = primaryColors({ colorType });
+            const color = primaryColors({ theme, colorType });
             cy.get(".input-element")
               .noTransition()
               .click()
@@ -108,7 +112,7 @@ describe("Border Error", () => {
   };
 
   const verifyNumberInput = (isValid: boolean, colorType: IColorTypes) => {
-    const borderPrimary = primaryColors({ colorType });
+    const borderPrimary = primaryColors({ theme, colorType });
     const color = isValid ? colors.error : borderPrimary;
     cy.get(".input-element")
       .type("input string text")
@@ -116,15 +120,13 @@ describe("Border Error", () => {
   };
 
   describe("Error Prop", () => {
-    beforeEach(() => {
-      mount(<Element error={true} />);
-    });
-
     it("border", () => {
+      mount(<Element error={true} />);
       cy.get(".input-element").focus().borderColor("have.css", colors.error);
     });
 
     it("shadow", () => {
+      mount(<Element error={true} />);
       cy.get(".input-element")
         .noTransition()
         .focus()
@@ -136,33 +138,25 @@ describe("Border Error", () => {
 
   colorList.forEach((colorType) => {
     describe("Email", () => {
-      beforeEach(() => {
-        mount(<Element color={colorType} inputType="email" />);
-      });
-
       it("InValid", () => {
+        mount(<Element color={colorType} inputType="email" />);
         verifyEmailInput("testing email input", true);
       });
 
       it("Valid", () => {
+        mount(<Element color={colorType} inputType="email" />);
         verifyEmailInput("testing@gmail.com", false);
       });
     });
 
     describe("Number", () => {
-      beforeEach(() => {
-        mount(
-          <Element color={colorType} inputType="number">
-            Submit
-          </Element>
-        );
-      });
-
       it("Invalid", () => {
+        mount(<Element color={colorType} inputType="number" />);
         verifyNumberInput(false, colorType);
       });
 
       it("Valid", () => {
+        mount(<Element color={colorType} inputType="number" />);
         verifyNumberInput(false, colorType);
       });
     });
