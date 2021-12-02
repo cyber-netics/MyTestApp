@@ -26,6 +26,7 @@ export const ButtonElem = styled.button<ButtonElemProps>`
   ${borderRadius};
   ${paddingPrimary};
   ${backgroundPrimary};
+  ${fontColorPrimary};
 
   &:hover {
     ${backgroundSecondary};
@@ -35,7 +36,6 @@ export const ButtonElem = styled.button<ButtonElemProps>`
 export const ButtonText = styled.span`
   ${buttonText};
   ${fontSizePrimary};
-  ${fontColorPrimary};
 `;
 
 export const LoadingAnim = styled(Loading)<InnerSizeTypes>`

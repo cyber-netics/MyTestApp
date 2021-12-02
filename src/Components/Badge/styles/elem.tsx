@@ -8,6 +8,7 @@ export const wrapper = css`
 export const badgeBase = css`
   color: #fff;
   margin: 1px;
+  padding: 2px;
   position: absolute;
   white-space: nowrap;
   font-weight: 600;
@@ -32,5 +33,4 @@ export const overflow = css`
 export const circle = css`
   width: 100%;
   height: 100%;
-  line-height: 1.4;
 `;

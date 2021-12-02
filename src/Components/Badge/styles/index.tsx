@@ -1,10 +1,5 @@
 import styled, { css } from "styled-components";
-import {
-  statusPrimary,
-  sizeSecondary,
-  fontSizePrimary,
-  paddingSecondary,
-} from "Shared/styles";
+import { statusPrimary, sizeSecondary, fontSizePrimary } from "Shared/styles";
 import { wrapper, badgeBase, overflow, circle, dot } from "./elem";
 
 export type IShapeTypes = "dot" | "circle" | "overflow";
@@ -30,5 +25,4 @@ export const BadgeElem = styled.span<InnerProps>`
   ${sizeSecondary};
   ${statusPrimary};
   ${fontSizePrimary};
-  ${paddingSecondary};
 `;
