@@ -10,9 +10,5 @@ export const button = css`
   border-radius: 2px;
   transition: all 0.3s;
   position: relative !important;
-`;
-
-export const buttonText = css`
-  font-weight: 600;
   justify-content: center;
 `;

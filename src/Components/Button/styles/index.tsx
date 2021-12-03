@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { button, buttonText, loading } from "./styles";
+import { button, loading } from "./styles";
 import { borderRadius } from "Shared/styles";
 
 import { Loading } from "Components/Animation/Loading";
@@ -27,15 +27,11 @@ export const ButtonElem = styled.button<ButtonElemProps>`
   ${paddingPrimary};
   ${backgroundPrimary};
   ${fontColorPrimary};
+  ${fontSizePrimary};
 
   &:hover {
     ${backgroundSecondary};
   }
-`;
-
-export const ButtonText = styled.span`
-  ${buttonText};
-  ${fontSizePrimary};
 `;
 
 export const LoadingAnim = styled(Loading)<InnerSizeTypes>`

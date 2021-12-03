@@ -8,7 +8,7 @@ import { createGlobalStyle } from "styled-components";
 export const colors = {
   dark: "rgb(0, 0, 0)",
   dark1: "rgb(48, 48, 48)",
-  dark2: "rgba(114, 114, 114, 0.3)",
+  dark2: "rgba(114, 114, 114, 0.9)",
   dark3: "rgb(0 0 0 / 6%)",
 
   primary: "rgb(24, 144, 255)",
