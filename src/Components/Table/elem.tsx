@@ -23,5 +23,6 @@ export const TableRow = styled.tr`
 `;
 
 export const Content = styled.td`
+  position: relative;
   white-space: nowrap;
 `;
