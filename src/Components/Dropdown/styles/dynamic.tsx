@@ -10,7 +10,6 @@ export interface IActive {
 
 export const visibility = css<IActive>`
   opacity: ${({ active }) => {
-    console.log("----", active);
     return active ? 1 : 0.2;
   }};
   visibility: ${({ active }) => {

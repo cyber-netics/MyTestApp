@@ -12,6 +12,7 @@ export const body = css`
   border-top: 0 !important;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+  transition: all 0.15s ease-in-out;
 `;
 
 export const header = css`

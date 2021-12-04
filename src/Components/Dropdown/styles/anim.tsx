@@ -2,11 +2,11 @@ import { keyframes, css } from "styled-components";
 
 const open = keyframes`
   from { height: 0px; }
-  to { height: 200px; }
+  to { height: 100%; }
 `;
 
 const close = keyframes`
-  from { height: 200px; }
+  from { height: 100%; }
   to { height: 0px; }
 `;
 
