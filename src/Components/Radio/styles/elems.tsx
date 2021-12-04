@@ -20,7 +20,7 @@ export const inputMark = css`
 `;
 
 export const checkmark = css`
-  display: inline-block;
+  display: block;
   position: relative;
   border-width: 1px;
   border-style: solid;
