@@ -5,7 +5,6 @@ export * from "./Components/Grid";
 export * from "./Components/Input";
 export * from "./Components/Divider";
 export * from "./Components/ContentBox";
-export * from "./Components/Payment";
 
 export { default as Card, CardProps } from "./Components/Card";
 export { default as Field, FieldProps } from "./Components/Field";
@@ -26,20 +25,18 @@ export {
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import Layout from "Layout";
-// import Section from "Components/Section";
-// import { OptionBox } from "Components/ContentBox";
+// import Field from "Components/Field";
+// import { Input } from "Components/Input";
 
 // ReactDOM.render(
 //   <Layout color="dark">
 //     <div style={{ padding: "1rem" }}>
-//       <Section title="Shipping method">
-//         <OptionBox
-//           items={[
-//             { name: "Regular Shipping", result: "Free" },
-//             { name: "Overnight Shipping", result: "$20" },
-//           ]}
-//         />
-//       </Section>
+//       <Field>
+//         <Input placeholder="Name on card" />
+//         <CardNumber>
+//           <input />
+//         </CardNumber>
+//       </Field>
 //     </div>
 //   </Layout>,
 //   document.getElementById("root")
