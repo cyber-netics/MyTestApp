@@ -9,7 +9,7 @@ import {
 
 // Height
 export const hightPrimary = css`
-  min-height: ${primaryHeight} !important;
+  min-height: ${primaryHeight};
 `;
 
 // Font
