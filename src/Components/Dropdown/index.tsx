@@ -17,7 +17,7 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
   };
 
   return (
-    <Container>
+    <Container className="exo-dropdown">
       <Header
         active={active}
         onClick={handleToggle}
