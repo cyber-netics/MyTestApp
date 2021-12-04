@@ -5,6 +5,7 @@ export * from "./Components/Grid";
 export * from "./Components/Input";
 export * from "./Components/Divider";
 export * from "./Components/ContentBox";
+export * from "./Components/Payment";
 
 export { default as Card, CardProps } from "./Components/Card";
 export { default as Field, FieldProps } from "./Components/Field";

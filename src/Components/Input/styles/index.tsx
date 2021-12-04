@@ -34,7 +34,7 @@ const dynamicBorderError = css<{ error?: boolean }>`
   ${({ error }) => error && borderErrorColor};
 `;
 
-export const InputStyles = css`
+export const inputStyles = css`
   ${base};
   ${dynamicBorderError};
   ${hightPrimary};
@@ -42,5 +42,5 @@ export const InputStyles = css`
 `;
 
 export const InputElem = styled.input<InputElemProps>`
-  ${InputStyles};
+  ${inputStyles};
 `;

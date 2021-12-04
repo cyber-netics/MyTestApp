@@ -9,7 +9,12 @@ import packageJson from "./package.json";
 
 export default [
   {
-    external: ["react", "react-dom", "styled-components"],
+    external: [
+      "react",
+      "react-dom",
+      "styled-components",
+      "@stripe/react-stripe-js",
+    ],
     input: "src/index.tsx",
     output: [
       {
