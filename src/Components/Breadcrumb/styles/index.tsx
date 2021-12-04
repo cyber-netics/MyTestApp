@@ -29,7 +29,7 @@ export const LinkDivider = styled.span`
 type IActive = { active?: boolean };
 const activeAttrs = ({ active }: IActive) => {
   return {
-    colorType: active ? "dark" : "primary",
+    colorType: !active ? "dark" : "primary",
   };
 };
 
