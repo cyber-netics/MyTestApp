@@ -1,4 +1,6 @@
 import React from "react";
+import Radio from "Components/Radio";
+
 import {
   Content,
   ContentBody,
@@ -12,7 +14,28 @@ import {
   BaseDivider,
   ContentName,
   ActionButton,
+  OptionLabel,
 } from "./styles/styles";
+
+export interface IOption {
+  name: string;
+  result: string;
+}
+
+export const OptionItem: React.FC<IOption> = (props) => {
+  return (
+    <Content>
+      <ContentBody>
+        <Radio>
+          <OptionLabel>{props.name}</OptionLabel>
+        </Radio>
+      </ContentBody>
+      <ContentFooter>
+        <FooterWrapper>{props.result}</FooterWrapper>
+      </ContentFooter>
+    </Content>
+  );
+};
 
 export interface IContent {
   name: string;

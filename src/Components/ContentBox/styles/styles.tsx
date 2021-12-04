@@ -39,22 +39,24 @@ export const BaseDivider = styled(Divider)`
 export const ContentName = styled.span`
   flex: 0 1 5em;
   color: #737373;
-  padding-right: 1.1428571429em;
+  padding-right: 9.15px;
 `;
 
 export const ContentBody = styled.div`
-  width: 60%;
   flex: 5;
+  width: 60%;
   color: #333333;
+  display: flex;
   padding-right: 1.15em;
 `;
 
 export const BodyText = styled.p`
   margin: 0;
   width: 90%;
-  overflow: hidden;
+  // overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  padding-left: 9.15px;
 `;
 
 /**
@@ -85,4 +87,14 @@ export const FooterText = styled.span`
   text-align: right;
   white-space: nowrap;
   padding-left: 0.75em;
+`;
+
+/**
+ *
+ */
+export const OptionLabel = styled.span`
+  color: #545454;
+  font-size: 13.5px;
+  white-space: nowrap;
+  padding-left: 7px;
 `;
