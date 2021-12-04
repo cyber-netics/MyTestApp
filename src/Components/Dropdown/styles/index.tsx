@@ -13,18 +13,17 @@ import {
 
 export const Container = styled.div`
   ${container};
+  ${borderDefault};
 `;
 
-export const Header = styled.div<InnerDarkLightColorTypes>`
+export const Header = styled.div<InnerDarkLightColorTypes & IActive>`
   ${header};
-  ${borderDefault};
   ${backgroundHighlight};
 `;
 
 export const Divider = styled.div`
   ${divider};
   ${borderDefault};
-  ${dynamicDivider};
 `;
 
 export const Body = styled.div<InnerDarkLightColorTypes & IActive & IReady>`
@@ -32,7 +31,6 @@ export const Body = styled.div<InnerDarkLightColorTypes & IActive & IReady>`
   ${visibility};
   ${toggleAnim};
   ${dynamicHight};
-  ${borderDefault};
   ${dynamicPadding};
   ${backgroundHighlight};
 `;

@@ -19,6 +19,7 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
   return (
     <Container>
       <Header
+        active={active}
         onClick={handleToggle}
         colorType={props.color}
         className="drop-header"
@@ -26,15 +27,16 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
         <>{props.header}</>
       </Header>
 
-      <Divider active={active} />
-
       <Body
         init={!init}
         active={active}
         colorType={props.color}
         className={props.className}
       >
-        <>{props.children}</>
+        <>
+          <Divider />
+          {props.children}
+        </>
       </Body>
     </Container>
   );

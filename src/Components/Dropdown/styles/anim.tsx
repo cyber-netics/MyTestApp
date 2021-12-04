@@ -11,12 +11,12 @@ const close = keyframes`
 `;
 
 export const closeAnimation = css`
-  animation-duration: 0.3s;
+  animation-duration: 0.25s ease;
   animation-name: ${close};
 `;
 
 export const openAnimation = css`
-  animation-duration: 0.3s;
+  animation-duration: 0.25s ease
   animation-name: ${open};
   animation-fill-mode: forwards;
 `;

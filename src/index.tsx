@@ -27,18 +27,16 @@ export {
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import Layout from "Layout";
-// import Field from "Components/Field";
-// import { Input } from "Components/Input";
+// import Dropdown from "Components/Dropdown";
 
 // ReactDOM.render(
 //   <Layout color="dark">
 //     <div style={{ padding: "1rem" }}>
-//       <Field>
-//         <Input placeholder="Name on card" />
-//         <CardNumber>
-//           <input />
-//         </CardNumber>
-//       </Field>
+//       <Dropdown header={<div>Hello</div>}>
+//         <div style={{ padding: "1.5rem" }}>
+//           <h1>hello world</h1>
+//         </div>
+//       </Dropdown>
 //     </div>
 //   </Layout>,
 //   document.getElementById("root")
