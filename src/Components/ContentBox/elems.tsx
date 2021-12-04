@@ -6,6 +6,7 @@ import {
   ContentBody,
   ContentFooter,
   FooterWrapper,
+  Option,
 } from "./styles/styles";
 
 import {
@@ -24,16 +25,16 @@ export interface IOption {
 
 export const OptionItem: React.FC<IOption> = (props) => {
   return (
-    <Content>
+    <Option>
       <ContentBody>
-        <Radio size='medium'>
+        <Radio size="medium">
           <OptionLabel>{props.name}</OptionLabel>
         </Radio>
       </ContentBody>
       <ContentFooter>
         <FooterWrapper>{props.result}</FooterWrapper>
       </ContentFooter>
-    </Content>
+    </Option>
   );
 };
 
