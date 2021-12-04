@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { borderDefault, backgroundHighlight } from "Shared/styles";
-import { container, header, body, divider } from "./elem";
+import { container, header, body, divider } from "./styles";
 import {
   IReady,
   IActive,

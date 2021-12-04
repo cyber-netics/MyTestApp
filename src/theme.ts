@@ -64,9 +64,9 @@ const theme = {
 
     highlight: {
       primary: {
-        dark: colors.dark3,
         light: colors.light,
-        primary: colors.highlight3,
+        primary: colors.dark3,
+        dark: colors.highlight3,
       },
     },
 
