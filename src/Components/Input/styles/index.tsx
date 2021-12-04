@@ -34,10 +34,13 @@ const dynamicBorderError = css<{ error?: boolean }>`
   ${({ error }) => error && borderErrorColor};
 `;
 
-export const InputElem = styled.input<InputElemProps>`
+export const InputStyles = css`
   ${base};
   ${dynamicBorderError};
-
   ${hightPrimary};
   ${interactiveBorder};
+`;
+
+export const InputElem = styled.input<InputElemProps>`
+  ${InputStyles};
 `;
