@@ -64,7 +64,6 @@ export const BodyText = styled.p`
  */
 export const ContentFooter = styled.div`
   max-width: 10em;
-  font-size: 0.95em;
   font-weight: 500;
 `;
 
