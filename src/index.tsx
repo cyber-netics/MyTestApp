@@ -22,13 +22,16 @@ export {
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import { BrowserRouter as Router } from "react-router-dom";
+
 // import Layout from "Layout";
-// import Badge from "Components/Badge";
+// import ContentBox from "Components/ContentBox";
 
 // ReactDOM.render(
 //   <Layout color="dark">
 //     <Router>
-//       <Badge count={3} size="large" />
+//       <ContentBox
+//         items={[{ name: "test1", body: "testing", result: "Free" }]}
+//       />
 //     </Router>
 //   </Layout>,
 //   document.getElementById("root")

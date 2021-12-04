@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { label, wrapper, checkmark, input, labelText } from "./elems";
+import { label, wrapper, checkmark, input, labelText } from "./styles";
 import {
   sizeSecondary,
   borderPrimary,
@@ -44,7 +44,7 @@ export const Input = styled.input<InnerColorTypes>`
   &:checked + ${Mark} {
     ${borderPrimary};
     ${backgroundPrimary};
-    
+
     &:hover {
       ${backgroundSecondary};
     }

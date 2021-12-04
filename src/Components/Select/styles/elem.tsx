@@ -17,6 +17,7 @@ export const select = css`
   padding: 13.5px;
   padding-left: 15px;
   padding-right: 0;
+  transition: all 0.3s;
 `;
 
 export const wrapper = css`
