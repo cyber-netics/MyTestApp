@@ -71,22 +71,22 @@ export const ContentFooter = styled.div`
 export const FooterWrapper = styled.a`
   cursor: pointer;
   color: #000000;
-  font-size: 0.855em;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
-`;
-
-export const ActionButton = styled.span`
-  color: #000000;
 `;
 
 export const FooterText = styled.span`
   color: #333333;
   cursor: pointer;
   font-weight: 500;
+  font-size: 0.855em;
   text-align: right;
   white-space: nowrap;
   padding-left: 0.75em;
+`;
+
+export const ActionButton = styled.span`
+  color: #000000;
 `;
 
 /**
@@ -94,7 +94,7 @@ export const FooterText = styled.span`
  */
 export const OptionLabel = styled.span`
   color: #545454;
-  font-size: 13.5px;
-  white-space: nowrap;
+  font-size: 14px;
   padding-left: 7px;
+  white-space: nowrap;
 `;
