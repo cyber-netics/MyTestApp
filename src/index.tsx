@@ -14,6 +14,8 @@ export { default as Checkbox, CheckboxProps } from "./Components/Checkbox";
 export { default as Select, Option, SelectProps } from "./Components/Select";
 export { default as Thumbnail, ThumbnailProps } from "./Components/Thumbnail";
 export { Input, InputEmail, InputNumber, InputProps } from "./Components/Input";
+export { default as ContentBox, ContentBoxProps } from "Components/ContentBox";
+
 export {
   default as Breadcrumb,
   BreadcrumbProps,
