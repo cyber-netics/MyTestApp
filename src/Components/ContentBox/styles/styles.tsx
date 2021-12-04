@@ -78,7 +78,7 @@ export const FooterText = styled.span`
   color: #333333;
   cursor: pointer;
   font-weight: 500;
-  font-size: 0.855em;
+  font-size: 12px;
   text-align: right;
   white-space: nowrap;
   padding-left: 0.75em;
@@ -86,6 +86,7 @@ export const FooterText = styled.span`
 
 export const ActionButton = styled.span`
   color: #000000;
+  font-size: 12px;
 `;
 
 /**
