@@ -26,7 +26,7 @@ export const wrapper = css`
 export const Content = styled.div`
   flex: 1;
   display: flex;
-  padding: 0.82em 1.2em;
+  padding: 14.5px;
 `;
 
 export const BaseDivider = styled(Divider)`

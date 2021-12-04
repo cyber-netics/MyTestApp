@@ -26,7 +26,7 @@ export const OptionItem: React.FC<IOption> = (props) => {
   return (
     <Content>
       <ContentBody>
-        <Radio>
+        <Radio size='medium'>
           <OptionLabel>{props.name}</OptionLabel>
         </Radio>
       </ContentBody>
