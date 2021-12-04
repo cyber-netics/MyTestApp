@@ -1,12 +1,17 @@
 import React from "react";
-import { Divider as BaseDivider } from "Components/Divider";
-
-import { Content, ContentName, ContentBody, BodyText } from "./styles/styles";
 import {
+  Content,
+  ContentBody,
   ContentFooter,
   FooterWrapper,
-  ActionButton,
+} from "./styles/styles";
+
+import {
+  BodyText,
   FooterText,
+  BaseDivider,
+  ContentName,
+  ActionButton,
 } from "./styles/styles";
 
 export interface IContent {

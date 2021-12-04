@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
+import { Divider } from "Components/Divider";
 
 export const container = css`
   color: #545454;
   background: #fff;
   border-radius: 5px;
-  min-height: 50px;
+  min-height: 40px;
   border-width: 1px;
   border-style: solid;
   background-clip: padding-box;
@@ -26,6 +27,10 @@ export const Content = styled.div`
   flex: 1;
   display: flex;
   padding: 0.82em 1.2em;
+`;
+
+export const BaseDivider = styled(Divider)`
+  margin: 0 1.2em;
 `;
 
 /**
