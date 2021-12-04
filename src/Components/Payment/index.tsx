@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
+import { InputProps } from "Components/Input";
 import { inputStyles } from "Components/Input/styles";
-import { hightPrimary } from "Shared/styles";
 import {
   CardCvcElement,
   CardNumberElement,
@@ -9,23 +9,19 @@ import {
 
 const inputBase = css`
   &&& {
-    ${hightPrimary};
+    ${inputStyles};
     background: #fff;
-    padding: 15px !important;
   }
 `;
 
-export const CardCvc = styled(CardCvcElement)`
+export const CardCvc = styled(CardCvcElement)<InputProps>`
   ${inputBase};
-  ${inputStyles};
 `;
 
-export const CardExpiry = styled(CardExpiryElement)`
+export const CardExpiry = styled(CardExpiryElement)<InputProps>`
   ${inputBase};
-  ${inputStyles};
 `;
 
-export const CardNumber = styled(CardNumberElement)`
+export const CardNumber = styled(CardNumberElement)<InputProps>`
   ${inputBase};
-  ${inputStyles};
 `;
