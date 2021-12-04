@@ -12,7 +12,6 @@ export { default as Radio, RadioProps } from "./Components/Radio";
 export { default as Button, ButtonProps } from "./Components/Button";
 export { default as Section, SectionProps } from "./Components/Section";
 export { default as Table, TableRow, Content } from "./Components/Table";
-export { default as Checkbox, CheckboxProps } from "./Components/Checkbox";
 export { default as Select, Option, SelectProps } from "./Components/Select";
 export { default as Thumbnail, ThumbnailProps } from "./Components/Thumbnail";
 export { Input, InputEmail, InputNumber, InputProps } from "./Components/Input";
