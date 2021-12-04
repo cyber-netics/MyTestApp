@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Container, Header, Body, Divider } from "./styles";
 
 export interface DropdownProps extends ElemDarkLightColorTypes {
-  header: string;
   className?: string;
+  header: JSX.Element | string;
   children?: JSX.Element;
 }
 
