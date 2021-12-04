@@ -40,7 +40,6 @@ export const checkmark = css`
     left: 50%;
     top: 50%;
     position: absolute;
-    transition: all 110ms;
   }
 `;
 
