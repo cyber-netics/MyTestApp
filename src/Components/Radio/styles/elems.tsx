@@ -15,8 +15,8 @@ export const input = css`
 export const inputMark = css`
   opacity: 1;
   transition: all 0.25s;
-  left: calc(20% - 1%);
-  top: calc(20% - 2.3%);
+  top: calc(20%);
+  left: calc(20% - 1.2%);
 `;
 
 export const checkmark = css`
