@@ -26,7 +26,13 @@ export const wrapper = css`
 export const Content = styled.div`
   flex: 1;
   display: flex;
-  padding: 14.5px;
+  padding: 13.15px 1.2em;
+`;
+
+export const Option = styled.div`
+  flex: 1;
+  display: flex;
+  padding: 14.5px 1.2em;
 `;
 
 export const BaseDivider = styled(Divider)`
