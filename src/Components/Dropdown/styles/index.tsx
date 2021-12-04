@@ -8,6 +8,7 @@ import {
   dynamicHight,
   dynamicDivider,
   dynamicPadding,
+  visibility,
 } from "./dynamic";
 
 export const Container = styled.div`
@@ -28,6 +29,7 @@ export const Divider = styled.div`
 
 export const Body = styled.div<InnerDarkLightColorTypes & IActive & IReady>`
   ${body};
+  ${visibility};
   ${toggleAnim};
   ${dynamicHight};
   ${borderDefault};
