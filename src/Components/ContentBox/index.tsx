@@ -12,7 +12,11 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => (
     <Wrapper>
       {props.items.map((item, i) => (
         <>
-          <ContentItem key={`${i}${item.name}`} {...item} />
+          <ContentItem
+            {...item}
+            key={`${i}${item.name}`}
+            className={props.className}
+          />
           <Divider index={i} length={props.items.length} />
         </>
       ))}
