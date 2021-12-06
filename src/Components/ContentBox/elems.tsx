@@ -21,11 +21,12 @@ import {
 export interface IOption {
   name: string;
   result: string;
+  className?: string;
 }
 
 export const OptionItem: React.FC<IOption> = (props) => {
   return (
-    <Option>
+    <Option className={props.className}>
       <ContentBody>
         <Radio size="medium">
           <OptionLabel>{props.name}</OptionLabel>
@@ -42,6 +43,7 @@ export interface IContent {
   name: string;
   body: string;
   result?: string;
+  className?: string;
   action?: {
     actionName: string;
     function: () => void;
@@ -50,7 +52,7 @@ export interface IContent {
 
 export const ContentItem: React.FC<IContent> = (props) => {
   return (
-    <Content>
+    <Content className={props.className}>
       <ContentName>{props.name}</ContentName>
       <ContentBody>
         <BodyText>{props.body}</BodyText>
