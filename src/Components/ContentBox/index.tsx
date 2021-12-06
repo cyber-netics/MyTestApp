@@ -9,7 +9,7 @@ export interface ContentBoxProps {
 }
 export const ContentBox: React.FC<ContentBoxProps> = (props) => (
   <Container>
-    <Wrapper>
+    <Wrapper className={props.className}>
       {props.items.map((item, i) => (
         <>
           <ContentItem
@@ -30,7 +30,7 @@ export interface OptionBoxProps {
 }
 export const OptionBox: React.FC<OptionBoxProps> = (props) => (
   <Container>
-    <Wrapper>
+    <Wrapper className={props.className}>
       {props.items.map((item, i) => (
         <>
           <OptionItem
