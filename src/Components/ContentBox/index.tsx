@@ -15,7 +15,7 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => (
           <ContentItem
             {...item}
             key={`${i}${item.name}`}
-            className={props.className}
+            className="content-item"
           />
           <Divider index={i} length={props.items.length} />
         </>
@@ -36,7 +36,7 @@ export const OptionBox: React.FC<OptionBoxProps> = (props) => (
           <OptionItem
             {...item}
             key={`${i}${item.name}`}
-            className={props.className}
+            className="option-item"
           />
           <Divider index={i} length={props.items.length} />
         </>
