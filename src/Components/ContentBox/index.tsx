@@ -5,6 +5,7 @@ import { IContent, IOption } from "./elems"; //Types
 
 export interface ContentBoxProps {
   items: IContent[];
+  className?: string;
 }
 export const ContentBox: React.FC<ContentBoxProps> = (props) => (
   <Container>
@@ -21,13 +22,18 @@ export const ContentBox: React.FC<ContentBoxProps> = (props) => (
 
 export interface OptionBoxProps {
   items: IOption[];
+  className?: string;
 }
 export const OptionBox: React.FC<OptionBoxProps> = (props) => (
   <Container>
     <Wrapper>
       {props.items.map((item, i) => (
         <>
-          <OptionItem key={`${i}${item.name}`} {...item} />
+          <OptionItem
+            {...item}
+            key={`${i}${item.name}`}
+            className={props.className}
+          />
           <Divider index={i} length={props.items.length} />
         </>
       ))}
